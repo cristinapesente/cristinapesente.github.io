@@ -285,6 +285,7 @@ letter-spacing:-.025em;margin-right:auto}
 <label class="field"><span>Seu nome</span><input id="f-nome" type="text" placeholder="Maria Silva"></label>
 <label class="field"><span>Seu e-mail</span><input id="f-email" type="email" placeholder="maria@empresa.com"></label>
 <label class="field"><span>Mensagem</span><textarea id="f-msg" placeholder="Sobre qual vaga ou projeto você quer falar?"></textarea></label>
+<input id="f-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 <button class="send" type="button" id="f-send">Enviar mensagem</button>
 <p class="hint" id="f-status" role="status" aria-live="polite" style="margin-top:10px;display:none"></p>
 </div>
@@ -298,30 +299,37 @@ function closeSheet(){sheet.classList.remove('open');backdrop.classList.remove('
 document.querySelectorAll('[data-contact]').forEach(b=>b.addEventListener('click',openSheet));
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeSheet));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet();});
-/* Chave do Web3Forms — pegue a sua em web3forms.com (leva 30s, é só informar o e-mail). */
-const FORM_KEY="9b302c6d-3dc9-43d0-ba05-e9e50d81d181";
+
+/* Endpoint que envia o e-mail de verdade (Cloudflare Worker + Resend).
+   Ver contato-CONFIGURAR.md para o passo a passo de publicar o Worker.
+   Vazio = formulário some e o site mostra e-mail/WhatsApp direto (nunca finge que envia). */
+const CONTATO_URL="";
 
 const btn=document.getElementById('f-send'), status=document.getElementById('f-status');
 function say(msg,ok){status.textContent=msg;status.style.display='block';
   status.style.color=ok===false?'#B3261E':(ok?'#1B6B3A':'');}
 
-btn.addEventListener('click',async()=>{
-  const elNome=document.getElementById('f-nome'), elEmail=document.getElementById('f-email'), elMsg=document.getElementById('f-msg');
+if(!CONTATO_URL){
+  btn.disabled=true; btn.textContent='Escreva por e-mail ou WhatsApp acima';
+} else btn.addEventListener('click',async()=>{
+  const elNome=document.getElementById('f-nome'), elEmail=document.getElementById('f-email'),
+        elMsg=document.getElementById('f-msg'), elHp=document.getElementById('f-hp');
   const n=elNome.value.trim(), m=elEmail.value.trim(), t=elMsg.value.trim();
+  if(elHp.value){ say('Mensagem enviada. Respondo em até um dia útil.',true); elNome.value=elEmail.value=elMsg.value=''; return; } // bot: finge sucesso, não envia
   if(!m||!t){say('Preencha seu e-mail e a mensagem.',false);return;}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){say('Confira o e-mail digitado.',false);return;}
+  if(t.length>5000){say('Mensagem muito longa.',false);return;}
 
   btn.disabled=true; const label=btn.textContent; btn.textContent='Enviando…'; say('');
   try{
-    const r=await fetch('https://api.web3forms.com/submit',{
-      method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'},
-      body:JSON.stringify({access_key:FORM_KEY, subject:n?'Portfólio — contato de '+n:'Portfólio — novo contato',
-        from_name:'Portfólio', name:n||'(não informado)', email:m, message:t})
+    const r=await fetch(CONTATO_URL,{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({nome:n, email:m, mensagem:t, honeypot:elHp.value})
     });
-    const d=await r.json();
-    if(d.success){ say('Mensagem enviada. Respondo em até um dia útil.',true);
+    const d=await r.json().catch(()=>({}));
+    if(r.ok && d.ok){ say('Mensagem enviada. Respondo em até um dia útil.',true);
       elNome.value=elEmail.value=elMsg.value=''; }
-    else{ say('Não consegui enviar. Escreva para '+EMAIL+' ou chame no WhatsApp.',false); }
+    else{ say(d.erro || ('Não consegui enviar. Escreva para '+EMAIL+' ou chame no WhatsApp.'),false); }
   }catch(e){
     say('Sem conexão no momento. Escreva para '+EMAIL+' ou chame no WhatsApp.',false);
   }finally{ btn.disabled=false; btn.textContent=label; }
