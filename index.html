@@ -303,7 +303,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet();});
 /* Endpoint que envia o e-mail de verdade (Cloudflare Worker + Resend).
    Ver contato-CONFIGURAR.md para o passo a passo de publicar o Worker.
    Vazio = formulário some e o site mostra e-mail/WhatsApp direto (nunca finge que envia). */
-const CONTATO_URL="";
+const CONTATO_URL="https://sweet-king-5b44.ccpesente.workers.dev/";
 
 const btn=document.getElementById('f-send'), status=document.getElementById('f-status');
 function say(msg,ok){status.textContent=msg;status.style.display='block';
