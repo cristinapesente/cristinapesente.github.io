@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
 <title>Cristina Pesente — Product Manager</title>
-<meta name="description" content="Portfólio de Cristina Pesente, Product Manager. Solvefy Agents, Solvefy Marketing, ERP Corporativo e Uno CRM.">
+<meta name="description" content="Portfólio de Cristina Pesente, Product Manager. Quatro produtos levados da descoberta ao lançamento: Solvefy Agents, Solvefy Marketing, ERP Corporativo e Uno CRM.">
 <meta name="author" content="Cristina Pesente">
 <meta name="theme-color" content="#E6E3DF">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E6E3DF'/><text y='.9em' x='50%' text-anchor='middle' font-size='72' font-family='sans-serif' font-weight='700' fill='%230B0B0C'>C</text></svg>">
@@ -15,7 +15,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Cristina Pesente">
 <meta property="og:title" content="Cristina Pesente — Product Manager">
-<meta property="og:description" content="Solvefy Agents, Solvefy Marketing, ERP Corporativo e Uno CRM.">
+<meta property="og:description" content="Quatro produtos levados da descoberta ao lançamento: Solvefy Agents, Solvefy Marketing, ERP Corporativo e Uno CRM.">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Cristina Pesente, Product Manager">
@@ -55,12 +55,15 @@ h1{font-family:var(--display);font-weight:500;margin:0}
 line-height:1.34;margin-top:clamp(4px,.7vh,12px)}
 .l3{display:block;color:var(--ink);font-weight:800;letter-spacing:-.04em;
 font-size:clamp(2.1rem,5.1vw,5rem);line-height:.97;margin-top:clamp(10px,1.4vh,22px)}
-.sk{display:inline-block;opacity:0;transform:translateY(.32em);
+.sk{white-space:nowrap;display:inline-block;opacity:0;transform:translateY(.32em);
 animation:reveal .46s cubic-bezier(.16,.84,.32,1) var(--d) forwards}
 @keyframes reveal{to{opacity:1;transform:none}}
+.strike{position:relative}
+.strike::after{content:"";position:absolute;left:0;right:0;top:53%;height:.07em;background:currentColor;transform-origin:left;transform:scaleX(0);animation:strikeln .22s ease-out var(--sd,0s) forwards}
+@keyframes strikeln{to{transform:scaleX(1)}}
 .chk{display:inline-block;vertical-align:-.06em;width:.82em;height:.82em;margin-left:.06em}
 .chk svg{width:100%;height:100%;display:block}
-.chk path{stroke-dasharray:32;stroke-dashoffset:32;animation:chkdraw .5s cubic-bezier(.65,0,.35,1) .9s forwards}
+.chk path{stroke-dasharray:32;stroke-dashoffset:32;animation:chkdraw .5s cubic-bezier(.65,0,.35,1) 1.95s forwards}
 @keyframes chkdraw{to{stroke-dashoffset:0}}
 
 .proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,2vw,40px);padding-top:clamp(44px,6vh,72px)}
@@ -149,7 +152,7 @@ margin-bottom:clamp(24px,4vh,40px);background-position:52% 12%}
 }
 @media(max-width:520px){.nav-hide{display:none} .m{text-align:left} .sheet{right:10px;left:10px;width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
-.sk{animation:none;opacity:1;transform:none} .case{transition:none;opacity:1;transform:none}
+.sk{animation:none;opacity:1;transform:none} .strike::after{animation:none;transform:scaleX(1)} .case{transition:none;opacity:1;transform:none}
 .chk path{animation:none;stroke-dashoffset:0}}
 @media print{.topbar,.backdrop,.sheet,.photo,footer{display:none} body{background:#fff} .job,.row{break-inside:avoid}}
 
@@ -205,6 +208,22 @@ letter-spacing:-.025em;margin-right:auto}
 .dbar div{border-right:0;border-bottom:1px solid var(--line)}.dbar div:last-child{border-bottom:0}}
 </style></head><body>
 
+<!-- Aviso de visualização — dispara em toda visita, exceto com ?eu=1 na URL
+     (uso: cristinapesente.github.io/?eu=1, pra testar sem gerar aviso). -->
+<script>
+(function(){
+  if (new URLSearchParams(location.search).get('eu') === '1') return;
+  try {
+    fetch('https://sweet-king-5b44.ccpesente.workers.dev/visita', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pagina: location.pathname, referrer: document.referrer }),
+      keepalive: true
+    }).catch(function(){});
+  } catch(e) {}
+})();
+</script>
+
 <div class="topbar"><div class="wrap">
 <nav><a class="name" href="#topo">cristina pesente</a><span class="spacer"></span>
 <a href="#cases">Cases</a><a class="nav-hide" href="#trajetoria">Minha trajetória</a>
@@ -214,13 +233,14 @@ letter-spacing:-.025em;margin-right:auto}
 <header class="hero" id="topo"><div class="photo"></div><div class="wrap">
 <div class="herotext"><h1>
 <span class="l1">Oi, sou a Cristina.</span>
-<span class="l2"><span class="sk" style="--d:0.4s">Na interseção de business, tech, ux e IA,</span></span>
+<span class="l2"><span class="sk strike" style="--d:0.4s;--sd:1.3s">PMM,</span> <span class="sk strike" style="--d:0.5s;--sd:1.38s">UX/UI,</span> <span class="sk strike" style="--d:0.6s;--sd:1.46s">Dev,</span> <span class="sk strike" style="--d:0.7s;--sd:1.54s">Data analyst,</span> <span class="sk strike" style="--d:0.8s;--sd:1.62s">AI Builder.</span></span>
 <span class="l3">Product Manager <span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
 </h1></div></div></header>
 
 <div class="wrap"><div class="proof"><div class="m"><div class="mv"><span class="dim"></span>15 dias</div><div class="ml">do zero ao MVP em produção</div></div><div class="m"><div class="mv"><span class="dim">12,0s → </span>9,56s</div><div class="ml">resposta dos agentes de IA</div></div><div class="m"><div class="mv"><span class="dim">50 → </span>80%</div><div class="ml">aprovação da plataforma</div></div><div class="m"><div class="mv"><span class="dim"></span>600+</div><div class="ml">clientes ativos no 1º ano</div></div></div></div>
 
 <section class="wrap sec" id="cases"><h2>Cases</h2>
+<p class="seclead">Quatro produtos levados da descoberta ao lançamento.</p>
 <div class="cases"><a class="case left" href="#case/solvefy-agents" data-case="solvefy-agents">
 <span class="eyebrow">2026 · PLATAFORMA MULTIAGENTE</span><h3>Solvefy Agents</h3>
 <p class="caseline">Do zero ao cliente pagante em 15 dias. <span class="dim">Prazo fixo de feira, escopo aberto.</span></p></a><a class="case right" href="#case/solvefy-marketing" data-case="solvefy-marketing">
@@ -232,7 +252,7 @@ letter-spacing:-.025em;margin-right:auto}
 <p class="caseline">600+ clientes no primeiro ano. <span class="dim">Bot ativo em menos de 5 minutos, sem código.</span></p></a></div></section>
 
 <section class="wrap sec" id="trajetoria"><h2>Minha trajetória</h2>
-<p class="seclead">Experiência no ciclo completo de produtos SaaS B2B, na interseção entre estratégia de negócio, tecnologia e experiência do usuário.</p>
+<p class="seclead">Mais de 5 anos no ciclo completo de produtos SaaS B2B, na interseção entre estratégia de negócio, tecnologia e experiência do usuário.</p>
 
 <div class="block"><div class="blocktitle">EXPERIÊNCIA</div><article class="job">
 <div class="lbl">dez 2024 — o momento · 1 ano 8 meses · Florianópolis, BR</div>
@@ -256,7 +276,7 @@ letter-spacing:-.025em;margin-right:auto}
 <ul><li>Mapeei e otimizei processos críticos de negócio, estruturando bases de dados para decisões estratégicas e ganhos de eficiência operacional.</li><li>Desenvolvi relatórios analíticos e dashboards que suportaram a tomada de decisão da liderança executiva.</li><li>Documentei processos e geri ferramentas colaborativas (Google Drive, planilhas inteligentes).</li></ul>
 <p class="tools">Mapeamento de Processos · Documentação · Google Drive · Dashboards · Análise de Dados · KPIs</p></div></article></div>
 <div class="block"><div class="blocktitle">COMPETÊNCIAS</div><div class="row"><div class="lbl">PROFICIENTE</div><div class="col"><ul class="plain"><li>Product Strategy · Product Roadmap · Discovery · Gestão de Backlog · User Stories · OKRs</li><li>SaaS B2B · Product-Led Growth (PLG) · IA Generativa · Automação de Jornadas</li><li>Análise de Mercado e Concorrência · Stakeholder Management · Agile · Scrum · Jira</li></ul></div></div><div class="row"><div class="lbl">INTERMEDIÁRIO</div><div class="col"><ul class="plain"><li>Data-Driven Decision Making · MVP Funcionais · Análise de Dados · KPIs</li><li>Go-to-Market · Product Marketing · Figma · Metabase · Google Analytics</li><li>Lean Startup · Design Thinking · Business Model Canvas</li></ul></div></div><div class="row"><div class="lbl">FAMILIARIDADE TÉCNICA</div><div class="col"><ul class="plain"><li>Git · GitHub · Java · JavaScript · HTML5 · CSS3 · SQL · Vibe Coding</li><li>Suficiente para dialogar com engenharia e reduzir retrabalho na tradução de requisitos.</li></ul></div></div></div>
-<div class="block"><div class="blocktitle">FORMAÇÃO E IDIOMAS</div><div class="row"><div class="lbl">JAN 2025 — MAI 2025</div><div class="col"><ul class="plain"><li><strong>Formação Profissional, Product Manager</strong> — PM3</li></ul></div></div><div class="row"><div class="lbl">PÓS-GRADUAÇÃO</div><div class="col"><ul class="plain"><li><strong>Gestão de Projetos e Metodologias Ágeis</strong> — Ibmec · MBA</li></ul></div></div><div class="row"><div class="lbl">AGO 2014 — AGO 2018</div><div class="col"><ul class="plain"><li><strong>Bacharelado, Arquitetura e Urbanismo</strong> — Universidade de Passo Fundo (UPF)</li></ul></div></div><div class="row"><div class="lbl">CURSOS</div><div class="col"><ul class="plain"><li>Estratégia de Negócios — Tera (2024)</li><li>UX &amp; Design Thinking — Udemy (2024)</li><li>Business Model Canvas I e II — Alura</li><li>Desenvolvimento de Software: Java, JavaScript, HTML5/CSS3 — Alura</li><li>Lean Startup, Metodologias Ágeis e Gestão de Resultados — Alura</li></ul></div></div><div class="row"><div class="lbl">IDIOMAS</div><div class="col"><ul class="plain"><li><strong>Português</strong> — nativo</li><li><strong>Inglês</strong> — capacidade de leitura técnica, comunicação básica, desenvolvendo comunicação verbal complexa.</li><li><strong>Espanhol</strong> — capacidade de comunicação verbal complexa, leitura técnica. Programa Polínguas USP (2023).</li></ul></div></div></div>
+<div class="block"><div class="blocktitle">FORMAÇÃO E IDIOMAS</div><div class="row"><div class="lbl">JAN 2025 — MAI 2025</div><div class="col"><ul class="plain"><li><strong>Formação Profissional, Product Manager</strong> — PM3</li></ul></div></div><div class="row"><div class="lbl">PÓS-GRADUAÇÃO</div><div class="col"><ul class="plain"><li><strong>Gestão de Projetos e Metodologias Ágeis</strong> — Ibmec · MBA</li></ul></div></div><div class="row"><div class="lbl">AGO 2014 — AGO 2018</div><div class="col"><ul class="plain"><li><strong>Bacharelado, Arquitetura e Urbanismo</strong> — Universidade de Passo Fundo (UPF)</li></ul></div></div><div class="row"><div class="lbl">CURSOS</div><div class="col"><ul class="plain"><li>Estratégia de Negócios — Tera (2024)</li><li>UX &amp; Design Thinking — Udemy (2024)</li><li>Business Model Canvas I e II — Alura</li><li>Desenvolvimento de Software: Java, JavaScript, HTML5/CSS3 — Alura</li><li>Lean Startup, Metodologias Ágeis e Gestão de Resultados — Alura</li></ul></div></div><div class="row"><div class="lbl">IDIOMAS</div><div class="col"><ul class="plain"><li><strong>Português</strong> — nativo</li><li><strong>Inglês</strong> — intermediário</li><li><strong>Espanhol</strong> — básico/intermediário</li></ul></div></div></div>
 </section>
 
 <div class="wrap"><footer>
