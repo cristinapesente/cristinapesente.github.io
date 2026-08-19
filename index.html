@@ -147,6 +147,11 @@ margin-bottom:clamp(24px,4vh,40px);background-position:52% 12%}
 .case.right{text-align:left} .case.right:hover{padding-right:0;padding-left:14px}
 .row,.job{grid-template-columns:minmax(0,1fr);gap:10px} .lbl{padding-top:0}
 }
+.langsw{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:5px;padding:3px}
+.langsw button{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted);
+background:transparent;border:0;border-radius:3px;padding:5px 8px;cursor:pointer;line-height:1}
+.langsw button:hover{color:var(--ink)}
+.langsw button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 @media(max-width:520px){.nav-hide{display:none} .m{text-align:left} .sheet{right:10px;left:10px;width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 .sk{animation:none;opacity:1;transform:none} .case{transition:none;opacity:1;transform:none}
@@ -223,82 +228,88 @@ letter-spacing:-.025em;margin-right:auto}
 
 <div class="topbar"><div class="wrap">
 <nav><a class="name" href="#topo">cristina pesente</a><span class="spacer"></span>
-<a href="#cases">Cases</a><a class="nav-hide" href="#trajetoria">Minha trajetória</a>
-<button class="cta" type="button" data-contact>Falar comigo</button></nav>
+<a href="#cases" data-i18n="nav.cases">Cases</a><a class="nav-hide" href="#trajetoria" data-i18n="nav.trajetoria">Minha trajetória</a>
+<button class="cta" type="button" data-contact data-i18n="nav.cta">Falar comigo</button>
+<div class="langsw" role="group" aria-label="Idioma / Language / Idioma">
+<button type="button" data-lang="pt" aria-pressed="true">PT</button>
+<button type="button" data-lang="en" aria-pressed="false">EN</button>
+<button type="button" data-lang="es" aria-pressed="false">ES</button>
+</div>
+</nav>
 </div></div>
 
 <header class="hero" id="topo"><div class="photo"></div><div class="wrap">
 <div class="herotext"><h1>
-<span class="l1">Oi, sou a Cristina.</span>
-<span class="l2"><span class="sk" style="--d:0.4s">Na interseção de business, tech, ux e IA,</span></span>
-<span class="l3">Product Manager <span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+<span class="l1" data-i18n="hero.l1">Oi, sou a Cristina.</span>
+<span class="l2"><span class="sk" style="--d:0.4s" data-i18n="hero.l2">Na interseção de business, tech, ux e IA,</span></span>
+<span class="l3"><span data-i18n="hero.l3">Product Manager</span> <span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
 </h1></div></div></header>
 
-<div class="wrap"><div class="proof"><div class="m"><div class="mv"><span class="dim"></span>15 dias</div><div class="ml">do zero ao MVP em produção</div></div><div class="m"><div class="mv"><span class="dim">12,0s → </span>9,56s</div><div class="ml">resposta dos agentes de IA</div></div><div class="m"><div class="mv"><span class="dim">50 → </span>80%</div><div class="ml">aprovação da plataforma</div></div><div class="m"><div class="mv"><span class="dim"></span>600+</div><div class="ml">clientes ativos no 1º ano</div></div></div></div>
+<div class="wrap"><div class="proof"><div class="m"><div class="mv"><span class="dim"></span><span data-i18n="proof.v1">15 dias</span></div><div class="ml" data-i18n="proof.l1">do zero ao MVP em produção</div></div><div class="m"><div class="mv"><span class="dim">12,0s → </span>9,56s</div><div class="ml" data-i18n="proof.l2">resposta dos agentes de IA</div></div><div class="m"><div class="mv"><span class="dim">50 → </span>80%</div><div class="ml" data-i18n="proof.l3">aprovação da plataforma</div></div><div class="m"><div class="mv"><span class="dim"></span>600+</div><div class="ml" data-i18n="proof.l4">clientes ativos no 1º ano</div></div></div></div>
 
-<section class="wrap sec" id="cases"><h2>Cases</h2>
+<section class="wrap sec" id="cases"><h2 data-i18n="cases.h2">Cases</h2>
 <div class="cases"><a class="case left" href="#case/solvefy-agents" data-case="solvefy-agents">
-<span class="eyebrow">2026 · PLATAFORMA MULTIAGENTE</span><h3>Solvefy Agents</h3>
-<p class="caseline">Do zero ao cliente pagante em 15 dias. <span class="dim">Prazo fixo de feira, escopo aberto.</span></p></a><a class="case right" href="#case/solvefy-marketing" data-case="solvefy-marketing">
-<span class="eyebrow">2025 · ORQUESTRAÇÃO MULTICANAL</span><h3>Solvefy Marketing</h3>
-<p class="caseline">De disparo avulso a jornadas recorrentes. <span class="dim">Turnaround de margem sem perder a base.</span></p></a><a class="case left" href="#case/erp-corporativo" data-case="erp-corporativo">
-<span class="eyebrow">2025 · PRODUTO INTERNO</span><h3>ERP Corporativo</h3>
-<p class="caseline">Seis módulos em uma plataforma só. <span class="dim">Do código ao deploy com Claude Code.</span></p></a><a class="case right" href="#case/uno-crm" data-case="uno-crm">
-<span class="eyebrow">2024 · CHATBOT DE IA GENERATIVA</span><h3>Uno CRM</h3>
-<p class="caseline">600+ clientes no primeiro ano. <span class="dim">Bot ativo em menos de 5 minutos, sem código.</span></p></a></div></section>
+<span class="eyebrow" data-i18n="cases.items.0.eyebrow">2026 · PLATAFORMA MULTIAGENTE</span><h3>Solvefy Agents</h3>
+<p class="caseline" data-i18n-html="cases.items.0.caseline">Do zero ao cliente pagante em 15 dias. <span class="dim">Prazo fixo de feira, escopo aberto.</span></p></a><a class="case right" href="#case/solvefy-marketing" data-case="solvefy-marketing">
+<span class="eyebrow" data-i18n="cases.items.1.eyebrow">2025 · ORQUESTRAÇÃO MULTICANAL</span><h3>Solvefy Marketing</h3>
+<p class="caseline" data-i18n-html="cases.items.1.caseline">De disparo avulso a jornadas recorrentes. <span class="dim">Turnaround de margem sem perder a base.</span></p></a><a class="case left" href="#case/erp-corporativo" data-case="erp-corporativo">
+<span class="eyebrow" data-i18n="cases.items.2.eyebrow">2025 · PRODUTO INTERNO</span><h3>ERP Corporativo</h3>
+<p class="caseline" data-i18n-html="cases.items.2.caseline">Seis módulos em uma plataforma só. <span class="dim">Do código ao deploy com Claude Code.</span></p></a><a class="case right" href="#case/uno-crm" data-case="uno-crm">
+<span class="eyebrow" data-i18n="cases.items.3.eyebrow">2024 · CHATBOT DE IA GENERATIVA</span><h3>Uno CRM</h3>
+<p class="caseline" data-i18n-html="cases.items.3.caseline">600+ clientes no primeiro ano. <span class="dim">Bot ativo em menos de 5 minutos, sem código.</span></p></a></div></section>
 
-<section class="wrap sec" id="trajetoria"><h2>Minha trajetória</h2>
-<p class="seclead">Experiência no ciclo completo de produtos SaaS B2B, na interseção entre estratégia de negócio, tecnologia e experiência do usuário.</p>
+<section class="wrap sec" id="trajetoria"><h2 data-i18n="traj.h2">Minha trajetória</h2>
+<p class="seclead" data-i18n="traj.lead">Experiência no ciclo completo de produtos SaaS B2B, na interseção entre estratégia de negócio, tecnologia e experiência do usuário.</p>
 
-<div class="block"><div class="blocktitle">EXPERIÊNCIA</div><article class="job">
-<div class="lbl">dez 2024 — o momento · 1 ano 8 meses · Florianópolis, BR</div>
-<div class="col"><h3 class="jt">Product Manager <span class="emp">Solvefy</span></h3>
-<ul><li>Liderei o MVP de uma plataforma multiagente de IA do zero ao lançamento em 15 dias; hoje com clientes pagantes.</li><li>Reduzi o tempo de resposta dos agentes de IA de 12,0s para 9,56s (−20%) através de discovery contínuo e priorização orientada a dados de uso real.</li><li>Gerei tração inicial de vendas via feira comercial, validando product-market fit e convertendo interesse em clientes pagantes nas primeiras semanas pós-lançamento.</li><li>Lidero o ciclo de vida completo de dois produtos (Solvefy Agents e Solvefy Marketing), atuando como interface estratégica entre negócio e engenharia para reduzir débito técnico e acelerar entregas.</li><li>Conduzi o turnaround de margem do Solvefy Marketing (ex-Disparo Pro), migrando um produto de disparo avulso para jornadas multicanal orquestradas (WhatsApp, SMS, RCS, e-mail e voz) com IA, elevando o NPS acima da meta e mantendo o churn sob controle durante a transição de modelo de negócio.</li></ul>
-<p class="tools">Claude · Figma · Metabase · Google Analytics · Product Roadmap · MRR · PLG · IA Generativa · SaaS</p></div></article><article class="job">
-<div class="lbl">set 2024 — nov 2024 · 3 meses · Florianópolis, BR</div>
-<div class="col"><h3 class="jt">Product Marketing Manager <span class="emp">Solvefy</span></h3>
-<ul><li>Defini posicionamento e proposta de valor, traduzindo funcionalidades técnicas em benefícios claros para o mercado.</li><li>Planejei e executei estratégias de Go-to-Market ponta a ponta para lançamentos de produto e funcionalidades.</li><li>Criei materiais de sales enablement (battlecards, argumentos de venda, treinamentos) para o time comercial.</li></ul>
-<p class="tools">Go-to-Market · Sales Enablement · Análise de Concorrência · Personas · Jornada do Cliente</p></div></article><article class="job">
-<div class="lbl">jun 2023 — set 2024 · 1 ano 4 meses · Florianópolis, BR</div>
-<div class="col"><h3 class="jt">Product Manager <span class="emp">Uno CRM</span></h3>
-<ul><li>Gerenciei e priorizei backlog orientado a valor em ambiente B2B, com foco em eficiência operacional e redução do time-to-market.</li><li>Facilitei rituais ágeis e alinhei stakeholders multidisciplinares para garantir a entrega contínua.</li><li>Conduzi análises de mercado e mapeamento de jornada do cliente para orientar melhorias de produto e aumentar adoção.</li><li>Liderei o Chatbot de IA Generativa, que permitiu a empresas implantarem chatbots personalizados sem exigir habilidades técnicas avançadas, definindo funções e integrando com canais de comunicação e CRM. 600 clientes ativos no primeiro ano, 4:30 min de onboarding e 80% de aprovação da plataforma (vs. ~50% antes do lançamento).</li></ul>
-<p class="tools">Jira · Agile · Backlog Management · User Stories · Stakeholder Management · B2B SaaS</p></div></article><article class="job">
-<div class="lbl">nov 2020 — jun 2023 · 2 anos 8 meses · São Paulo, BR · Remoto</div>
-<div class="col"><h3 class="jt">Product Manager <span class="emp">4One Builder + Developer</span></h3>
-<ul><li>Liderei produtos SaaS do zero à escala, com responsabilidade sobre priorização, métricas de produto e estratégia de crescimento.</li><li>Desenvolvi soluções digitais e automações baseadas em regras que eliminaram gargalos críticos na jornada do usuário.</li><li>Fui responsável pelo alinhamento técnico entre Product Discovery e implementação, eliminando retrabalho e acelerando entregas.</li><li>Gerenciei stakeholders multidisciplinares, traduzindo requisitos complexos de negócio em especificações técnicas acionáveis.</li></ul>
-<p class="tools">Product Discovery · User Stories · Automação · Git · GitHub · JavaScript · Java · HTML5 · CSS3 · Agile</p></div></article><article class="job">
-<div class="lbl">jan 2016 — nov 2020 · 4 anos 11 meses · Florianópolis, BR · Híbrido</div>
-<div class="col"><h3 class="jt">Analista de Negócios <span class="emp">Lumma Construtora</span></h3>
-<ul><li>Mapeei e otimizei processos críticos de negócio, estruturando bases de dados para decisões estratégicas e ganhos de eficiência operacional.</li><li>Desenvolvi relatórios analíticos e dashboards que suportaram a tomada de decisão da liderança executiva.</li><li>Documentei processos e geri ferramentas colaborativas (Google Drive, planilhas inteligentes).</li></ul>
-<p class="tools">Mapeamento de Processos · Documentação · Google Drive · Dashboards · Análise de Dados · KPIs</p></div></article></div>
-<div class="block"><div class="blocktitle">COMPETÊNCIAS</div><div class="row"><div class="lbl">PROFICIENTE</div><div class="col"><ul class="plain"><li>Product Strategy · Product Roadmap · Discovery · Gestão de Backlog · User Stories · OKRs</li><li>SaaS B2B · Product-Led Growth (PLG) · IA Generativa · Automação de Jornadas</li><li>Análise de Mercado e Concorrência · Stakeholder Management · Agile · Scrum · Jira</li></ul></div></div><div class="row"><div class="lbl">INTERMEDIÁRIO</div><div class="col"><ul class="plain"><li>Data-Driven Decision Making · MVP Funcionais · Análise de Dados · KPIs</li><li>Go-to-Market · Product Marketing · Figma · Metabase · Google Analytics</li><li>Lean Startup · Design Thinking · Business Model Canvas</li></ul></div></div><div class="row"><div class="lbl">FAMILIARIDADE TÉCNICA</div><div class="col"><ul class="plain"><li>Git · GitHub · Java · JavaScript · HTML5 · CSS3 · SQL · Vibe Coding</li><li>Suficiente para dialogar com engenharia e reduzir retrabalho na tradução de requisitos.</li></ul></div></div></div>
-<div class="block"><div class="blocktitle">FORMAÇÃO E IDIOMAS</div><div class="row"><div class="lbl">JAN 2025 — MAI 2025</div><div class="col"><ul class="plain"><li><strong>Formação Profissional, Product Manager</strong> — PM3</li></ul></div></div><div class="row"><div class="lbl">PÓS-GRADUAÇÃO</div><div class="col"><ul class="plain"><li><strong>Gestão de Projetos e Metodologias Ágeis</strong> — Ibmec · MBA</li></ul></div></div><div class="row"><div class="lbl">AGO 2014 — AGO 2018</div><div class="col"><ul class="plain"><li><strong>Bacharelado, Arquitetura e Urbanismo</strong> — Universidade de Passo Fundo (UPF)</li></ul></div></div><div class="row"><div class="lbl">CURSOS</div><div class="col"><ul class="plain"><li>Estratégia de Negócios — Tera (2024)</li><li>UX &amp; Design Thinking — Udemy (2024)</li><li>Business Model Canvas I e II — Alura</li><li>Desenvolvimento de Software: Java, JavaScript, HTML5/CSS3 — Alura</li><li>Lean Startup, Metodologias Ágeis e Gestão de Resultados — Alura</li></ul></div></div><div class="row"><div class="lbl">IDIOMAS</div><div class="col"><ul class="plain"><li><strong>Português</strong> — nativo</li><li><strong>Inglês</strong> — capacidade de leitura técnica, comunicação básica, desenvolvendo comunicação verbal complexa.</li><li><strong>Espanhol</strong> — capacidade de comunicação verbal complexa, leitura técnica. Programa Polínguas USP (2023).</li></ul></div></div></div>
+<div class="block"><div class="blocktitle" data-i18n="blocktitle.exp">EXPERIÊNCIA</div><article class="job">
+<div class="lbl" data-i18n="jobs.0.lbl">dez 2024 — o momento · 1 ano 8 meses · Florianópolis, BR</div>
+<div class="col"><h3 class="jt"><span data-i18n="jobs.0.jt">Product Manager</span> <span class="emp">Solvefy</span></h3>
+<ul><li data-i18n="jobs.0.bullets.0">Liderei o MVP de uma plataforma multiagente de IA do zero ao lançamento em 15 dias; hoje com clientes pagantes.</li><li data-i18n="jobs.0.bullets.1">Reduzi o tempo de resposta dos agentes de IA de 12,0s para 9,56s (−20%) através de discovery contínuo e priorização orientada a dados de uso real.</li><li data-i18n="jobs.0.bullets.2">Gerei tração inicial de vendas via feira comercial, validando product-market fit e convertendo interesse em clientes pagantes nas primeiras semanas pós-lançamento.</li><li data-i18n="jobs.0.bullets.3">Lidero o ciclo de vida completo de dois produtos (Solvefy Agents e Solvefy Marketing), atuando como interface estratégica entre negócio e engenharia para reduzir débito técnico e acelerar entregas.</li><li data-i18n="jobs.0.bullets.4">Conduzi o turnaround de margem do Solvefy Marketing (ex-Disparo Pro), migrando um produto de disparo avulso para jornadas multicanal orquestradas (WhatsApp, SMS, RCS, e-mail e voz) com IA, elevando o NPS acima da meta e mantendo o churn sob controle durante a transição de modelo de negócio.</li></ul>
+<p class="tools" data-i18n="jobs.0.tools">Claude · Figma · Metabase · Google Analytics · Product Roadmap · MRR · PLG · IA Generativa · SaaS</p></div></article><article class="job">
+<div class="lbl" data-i18n="jobs.1.lbl">set 2024 — nov 2024 · 3 meses · Florianópolis, BR</div>
+<div class="col"><h3 class="jt"><span data-i18n="jobs.1.jt">Product Marketing Manager</span> <span class="emp">Solvefy</span></h3>
+<ul><li data-i18n="jobs.1.bullets.0">Defini posicionamento e proposta de valor, traduzindo funcionalidades técnicas em benefícios claros para o mercado.</li><li data-i18n="jobs.1.bullets.1">Planejei e executei estratégias de Go-to-Market ponta a ponta para lançamentos de produto e funcionalidades.</li><li data-i18n="jobs.1.bullets.2">Criei materiais de sales enablement (battlecards, argumentos de venda, treinamentos) para o time comercial.</li></ul>
+<p class="tools" data-i18n="jobs.1.tools">Go-to-Market · Sales Enablement · Análise de Concorrência · Personas · Jornada do Cliente</p></div></article><article class="job">
+<div class="lbl" data-i18n="jobs.2.lbl">jun 2023 — set 2024 · 1 ano 4 meses · Florianópolis, BR</div>
+<div class="col"><h3 class="jt"><span data-i18n="jobs.2.jt">Product Manager</span> <span class="emp">Uno CRM</span></h3>
+<ul><li data-i18n="jobs.2.bullets.0">Gerenciei e priorizei backlog orientado a valor em ambiente B2B, com foco em eficiência operacional e redução do time-to-market.</li><li data-i18n="jobs.2.bullets.1">Facilitei rituais ágeis e alinhei stakeholders multidisciplinares para garantir a entrega contínua.</li><li data-i18n="jobs.2.bullets.2">Conduzi análises de mercado e mapeamento de jornada do cliente para orientar melhorias de produto e aumentar adoção.</li><li data-i18n="jobs.2.bullets.3">Liderei o Chatbot de IA Generativa, que permitiu a empresas implantarem chatbots personalizados sem exigir habilidades técnicas avançadas, definindo funções e integrando com canais de comunicação e CRM. 600 clientes ativos no primeiro ano, 4:30 min de onboarding e 80% de aprovação da plataforma (vs. ~50% antes do lançamento).</li></ul>
+<p class="tools" data-i18n="jobs.2.tools">Jira · Agile · Backlog Management · User Stories · Stakeholder Management · B2B SaaS</p></div></article><article class="job">
+<div class="lbl" data-i18n="jobs.3.lbl">nov 2020 — jun 2023 · 2 anos 8 meses · São Paulo, BR · Remoto</div>
+<div class="col"><h3 class="jt"><span data-i18n="jobs.3.jt">Product Manager</span> <span class="emp">4One Builder + Developer</span></h3>
+<ul><li data-i18n="jobs.3.bullets.0">Liderei produtos SaaS do zero à escala, com responsabilidade sobre priorização, métricas de produto e estratégia de crescimento.</li><li data-i18n="jobs.3.bullets.1">Desenvolvi soluções digitais e automações baseadas em regras que eliminaram gargalos críticos na jornada do usuário.</li><li data-i18n="jobs.3.bullets.2">Fui responsável pelo alinhamento técnico entre Product Discovery e implementação, eliminando retrabalho e acelerando entregas.</li><li data-i18n="jobs.3.bullets.3">Gerenciei stakeholders multidisciplinares, traduzindo requisitos complexos de negócio em especificações técnicas acionáveis.</li></ul>
+<p class="tools" data-i18n="jobs.3.tools">Product Discovery · User Stories · Automação · Git · GitHub · JavaScript · Java · HTML5 · CSS3 · Agile</p></div></article><article class="job">
+<div class="lbl" data-i18n="jobs.4.lbl">jan 2016 — nov 2020 · 4 anos 11 meses · Florianópolis, BR · Híbrido</div>
+<div class="col"><h3 class="jt"><span data-i18n="jobs.4.jt">Analista de Negócios</span> <span class="emp">Lumma Construtora</span></h3>
+<ul><li data-i18n="jobs.4.bullets.0">Mapeei e otimizei processos críticos de negócio, estruturando bases de dados para decisões estratégicas e ganhos de eficiência operacional.</li><li data-i18n="jobs.4.bullets.1">Desenvolvi relatórios analíticos e dashboards que suportaram a tomada de decisão da liderança executiva.</li><li data-i18n="jobs.4.bullets.2">Documentei processos e geri ferramentas colaborativas (Google Drive, planilhas inteligentes).</li></ul>
+<p class="tools" data-i18n="jobs.4.tools">Mapeamento de Processos · Documentação · Google Drive · Dashboards · Análise de Dados · KPIs</p></div></article></div>
+<div class="block"><div class="blocktitle" data-i18n="blocktitle.comp">COMPETÊNCIAS</div><div class="row"><div class="lbl" data-i18n="comp.proficiente.lbl">PROFICIENTE</div><div class="col"><ul class="plain"><li data-i18n="comp.proficiente.0">Product Strategy · Product Roadmap · Discovery · Gestão de Backlog · User Stories · OKRs</li><li data-i18n="comp.proficiente.1">SaaS B2B · Product-Led Growth (PLG) · IA Generativa · Automação de Jornadas</li><li data-i18n="comp.proficiente.2">Análise de Mercado e Concorrência · Stakeholder Management · Agile · Scrum · Jira</li></ul></div></div><div class="row"><div class="lbl" data-i18n="comp.intermediario.lbl">INTERMEDIÁRIO</div><div class="col"><ul class="plain"><li data-i18n="comp.intermediario.0">Data-Driven Decision Making · MVP Funcionais · Análise de Dados · KPIs</li><li data-i18n="comp.intermediario.1">Go-to-Market · Product Marketing · Figma · Metabase · Google Analytics</li><li data-i18n="comp.intermediario.2">Lean Startup · Design Thinking · Business Model Canvas</li></ul></div></div><div class="row"><div class="lbl" data-i18n="comp.tecnica.lbl">FAMILIARIDADE TÉCNICA</div><div class="col"><ul class="plain"><li data-i18n="comp.tecnica.0">Git · GitHub · Java · JavaScript · HTML5 · CSS3 · SQL · Vibe Coding</li><li data-i18n="comp.tecnica.1">Suficiente para dialogar com engenharia e reduzir retrabalho na tradução de requisitos.</li></ul></div></div></div>
+<div class="block"><div class="blocktitle" data-i18n="blocktitle.edu">FORMAÇÃO E IDIOMAS</div><div class="row"><div class="lbl" data-i18n="edu.formacaoData">JAN 2025 — MAI 2025</div><div class="col"><ul class="plain"><li data-i18n-html="edu.formacao">Formação Profissional, Product Manager — PM3</li></ul></div></div><div class="row"><div class="lbl" data-i18n="edu.pos.lbl">PÓS-GRADUAÇÃO</div><div class="col"><ul class="plain"><li data-i18n-html="edu.pos.txt">Gestão de Projetos e Metodologias Ágeis — Ibmec · MBA</li></ul></div></div><div class="row"><div class="lbl" data-i18n="edu.gradData">AGO 2014 — AGO 2018</div><div class="col"><ul class="plain"><li data-i18n-html="edu.grad">Bacharelado, Arquitetura e Urbanismo — Universidade de Passo Fundo (UPF)</li></ul></div></div><div class="row"><div class="lbl" data-i18n="edu.cursos.lbl">CURSOS</div><div class="col"><ul class="plain"><li data-i18n="edu.cursos.0">Estratégia de Negócios — Tera (2024)</li><li data-i18n="edu.cursos.1">UX &amp; Design Thinking — Udemy (2024)</li><li data-i18n="edu.cursos.2">Business Model Canvas I e II — Alura</li><li data-i18n="edu.cursos.3">Desenvolvimento de Software: Java, JavaScript, HTML5/CSS3 — Alura</li><li data-i18n="edu.cursos.4">Lean Startup, Metodologias Ágeis e Gestão de Resultados — Alura</li></ul></div></div><div class="row"><div class="lbl" data-i18n="edu.idiomas.lbl">IDIOMAS</div><div class="col"><ul class="plain"><li data-i18n-html="edu.idiomas.0"><strong>Português</strong> — nativo</li><li data-i18n-html="edu.idiomas.1"><strong>Inglês</strong> — capacidade de leitura técnica, comunicação básica, desenvolvendo comunicação verbal complexa.</li><li data-i18n-html="edu.idiomas.2"><strong>Espanhol</strong> — capacidade de comunicação verbal complexa, leitura técnica. Programa Polínguas USP (2023).</li></ul></div></div></div>
 </section>
 
 <div class="wrap"><footer>
 <span class="name">cristina pesente</span>
 <a href="mailto:ccpesente@gmail.com">ccpesente@gmail.com</a>
 <a href="https://www.linkedin.com/in/cristinapesente" target="_blank" rel="noopener">LinkedIn</a>
-<a href="CristinaPesente_Curriculo.pdf" download>Currículo em PDF</a>
-<button class="cta" type="button" data-contact>Falar comigo</button>
+<a href="CristinaPesente_Curriculo.pdf" download data-i18n="footer.cv">Currículo em PDF</a>
+<button class="cta" type="button" data-contact data-i18n="nav.cta">Falar comigo</button>
 </footer></div>
 
 <div class="backdrop" data-close></div>
 <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" id="sheet">
 <button class="close" type="button" data-close aria-label="Fechar">&times;</button>
-<h4 id="sheet-title">Falar comigo</h4>
-<p class="hint">Respondo em até um dia útil. Escolha o canal que preferir.</p>
+<h4 id="sheet-title" data-i18n="sheet.title">Falar comigo</h4>
+<p class="hint" data-i18n="sheet.hint">Respondo em até um dia útil. Escolha o canal que preferir.</p>
 <div class="direct">
-<a href="mailto:ccpesente@gmail.com"><span>E-mail</span><span class="k">ccpesente@gmail.com</span></a>
+<a href="mailto:ccpesente@gmail.com"><span data-i18n="sheet.email">E-mail</span><span class="k">ccpesente@gmail.com</span></a>
 <a href="https://wa.me/5548991753562" target="_blank" rel="noopener"><span>WhatsApp</span><span class="k">(48) 99175-3562</span></a>
 <a href="https://www.linkedin.com/in/cristinapesente" target="_blank" rel="noopener"><span>LinkedIn</span><span class="k">/in/cristinapesente</span></a>
 </div>
-<div class="rule">ou escreva aqui</div>
-<label class="field"><span>Seu nome</span><input id="f-nome" type="text" placeholder="Maria Silva"></label>
-<label class="field"><span>Seu e-mail</span><input id="f-email" type="email" placeholder="maria@empresa.com"></label>
-<label class="field"><span>Mensagem</span><textarea id="f-msg" placeholder="Sobre qual vaga ou projeto você quer falar?"></textarea></label>
+<div class="rule" data-i18n="sheet.or">ou escreva aqui</div>
+<label class="field"><span data-i18n="sheet.name">Seu nome</span><input id="f-nome" type="text" placeholder="Maria Silva"></label>
+<label class="field"><span data-i18n="sheet.emailField">Seu e-mail</span><input id="f-email" type="email" placeholder="maria@empresa.com"></label>
+<label class="field"><span data-i18n="sheet.message">Mensagem</span><textarea id="f-msg" data-i18n-ph="sheet.msgPh" placeholder="Sobre qual vaga ou projeto você quer falar?"></textarea></label>
 <input id="f-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-<button class="send" type="button" id="f-send">Enviar mensagem</button>
+<button class="send" type="button" id="f-send" data-i18n="sheet.send">Enviar mensagem</button>
 <p class="hint" id="f-status" role="status" aria-live="polite" style="margin-top:10px;display:none"></p>
 </div>
 
@@ -327,23 +338,24 @@ if(!CONTATO_URL){
   const elNome=document.getElementById('f-nome'), elEmail=document.getElementById('f-email'),
         elMsg=document.getElementById('f-msg'), elHp=document.getElementById('f-hp');
   const n=elNome.value.trim(), m=elEmail.value.trim(), t=elMsg.value.trim();
-  if(elHp.value){ say('Mensagem enviada. Respondo em até um dia útil.',true); elNome.value=elEmail.value=elMsg.value=''; return; } // bot: finge sucesso, não envia
-  if(!m||!t){say('Preencha seu e-mail e a mensagem.',false);return;}
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){say('Confira o e-mail digitado.',false);return;}
-  if(t.length>5000){say('Mensagem muito longa.',false);return;}
+  const S=()=>UI[currentLang].sheet;
+  if(elHp.value){ say(S().sent,true); elNome.value=elEmail.value=elMsg.value=''; return; } // bot: finge sucesso, não envia
+  if(!m||!t){say(S().fillRequired,false);return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){say(S().badEmail,false);return;}
+  if(t.length>5000){say(S().tooLong,false);return;}
 
-  btn.disabled=true; const label=btn.textContent; btn.textContent='Enviando…'; say('');
+  btn.disabled=true; const label=btn.textContent; btn.textContent=S().sending; say('');
   try{
     const r=await fetch(CONTATO_URL,{
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({nome:n, email:m, mensagem:t, honeypot:elHp.value})
     });
     const d=await r.json().catch(()=>({}));
-    if(r.ok && d.ok){ say('Mensagem enviada. Respondo em até um dia útil.',true);
+    if(r.ok && d.ok){ say(S().sent,true);
       elNome.value=elEmail.value=elMsg.value=''; }
-    else{ say(d.erro || ('Não consegui enviar. Escreva para '+EMAIL+' ou chame no WhatsApp.'),false); }
+    else{ say(d.erro || (S().sendFail+EMAIL+S().sendFailEnd),false); }
   }catch(e){
-    say('Sem conexão no momento. Escreva para '+EMAIL+' ou chame no WhatsApp.',false);
+    say(S().offline+EMAIL+S().sendFailEnd,false);
   }finally{ btn.disabled=false; btn.textContent=label; }
 });
 
@@ -362,14 +374,501 @@ revealVisible();
 
 <div class="casepanel" id="casepanel" role="dialog" aria-modal="true" aria-labelledby="cp-title">
 <div class="cpbar"><div class="wrap"><div class="in">
-<button class="cpback" type="button" data-cpclose>&larr; Voltar aos cases</button>
+<button class="cpback" type="button" data-cpclose data-i18n="cp.back">&larr; Voltar aos cases</button>
 <span class="who" id="cp-who"></span>
+<div class="langsw" role="group" aria-label="Idioma / Language / Idioma">
+<button type="button" data-lang="pt" aria-pressed="true">PT</button>
+<button type="button" data-lang="en" aria-pressed="false">EN</button>
+<button type="button" data-lang="es" aria-pressed="false">ES</button>
+</div>
 </div></div></div>
 <div class="wrap" id="cp-body"></div>
 </div>
 
 <script>
-const CASES = {
+function getPath(obj, path){ return path.split('.').reduce((o,k)=> (o==null?undefined:o[k]), obj); }
+let currentLang = localStorage.getItem('lang') || 'pt';
+
+const UI = {
+pt: {
+  meta:{ title:"Cristina Pesente — Product Manager", description:"Portfólio de Cristina Pesente, Product Manager. Solvefy Agents, Solvefy Marketing, ERP Corporativo e Uno CRM." },
+  nav:{ cases:"Cases", trajetoria:"Minha trajetória", cta:"Falar comigo" },
+  hero:{ l1:"Oi, sou a Cristina.", l2:"Na interseção de business, tech, ux e IA,", l3:"Product Manager" },
+  proof:{ v1:"15 dias", l1:"do zero ao MVP em produção", l2:"resposta dos agentes de IA", l3:"aprovação da plataforma", l4:"clientes ativos no 1º ano" },
+  cases:{ h2:"Cases", items:[
+    {eyebrow:"2026 · PLATAFORMA MULTIAGENTE", caseline:'Do zero ao cliente pagante em 15 dias. <span class="dim">Prazo fixo de feira, escopo aberto.</span>'},
+    {eyebrow:"2025 · ORQUESTRAÇÃO MULTICANAL", caseline:'De disparo avulso a jornadas recorrentes. <span class="dim">Turnaround de margem sem perder a base.</span>'},
+    {eyebrow:"2025 · PRODUTO INTERNO", caseline:'Seis módulos em uma plataforma só. <span class="dim">Do código ao deploy com Claude Code.</span>'},
+    {eyebrow:"2024 · CHATBOT DE IA GENERATIVA", caseline:'600+ clientes no primeiro ano. <span class="dim">Bot ativo em menos de 5 minutos, sem código.</span>'}
+  ]},
+  traj:{ h2:"Minha trajetória", lead:"Experiência no ciclo completo de produtos SaaS B2B, na interseção entre estratégia de negócio, tecnologia e experiência do usuário." },
+  blocktitle:{ exp:"EXPERIÊNCIA", comp:"COMPETÊNCIAS", edu:"FORMAÇÃO E IDIOMAS" },
+  jobs:[
+    { lbl:"dez 2024 — o momento · 1 ano 8 meses · Florianópolis, BR", jt:"Product Manager",
+      bullets:["Liderei o MVP de uma plataforma multiagente de IA do zero ao lançamento em 15 dias; hoje com clientes pagantes.","Reduzi o tempo de resposta dos agentes de IA de 12,0s para 9,56s (−20%) através de discovery contínuo e priorização orientada a dados de uso real.","Gerei tração inicial de vendas via feira comercial, validando product-market fit e convertendo interesse em clientes pagantes nas primeiras semanas pós-lançamento.","Lidero o ciclo de vida completo de dois produtos (Solvefy Agents e Solvefy Marketing), atuando como interface estratégica entre negócio e engenharia para reduzir débito técnico e acelerar entregas.","Conduzi o turnaround de margem do Solvefy Marketing (ex-Disparo Pro), migrando um produto de disparo avulso para jornadas multicanal orquestradas (WhatsApp, SMS, RCS, e-mail e voz) com IA, elevando o NPS acima da meta e mantendo o churn sob controle durante a transição de modelo de negócio."],
+      tools:"Claude · Figma · Metabase · Google Analytics · Product Roadmap · MRR · PLG · IA Generativa · SaaS" },
+    { lbl:"set 2024 — nov 2024 · 3 meses · Florianópolis, BR", jt:"Product Marketing Manager",
+      bullets:["Defini posicionamento e proposta de valor, traduzindo funcionalidades técnicas em benefícios claros para o mercado.","Planejei e executei estratégias de Go-to-Market ponta a ponta para lançamentos de produto e funcionalidades.","Criei materiais de sales enablement (battlecards, argumentos de venda, treinamentos) para o time comercial."],
+      tools:"Go-to-Market · Sales Enablement · Análise de Concorrência · Personas · Jornada do Cliente" },
+    { lbl:"jun 2023 — set 2024 · 1 ano 4 meses · Florianópolis, BR", jt:"Product Manager",
+      bullets:["Gerenciei e priorizei backlog orientado a valor em ambiente B2B, com foco em eficiência operacional e redução do time-to-market.","Facilitei rituais ágeis e alinhei stakeholders multidisciplinares para garantir a entrega contínua.","Conduzi análises de mercado e mapeamento de jornada do cliente para orientar melhorias de produto e aumentar adoção.","Liderei o Chatbot de IA Generativa, que permitiu a empresas implantarem chatbots personalizados sem exigir habilidades técnicas avançadas, definindo funções e integrando com canais de comunicação e CRM. 600 clientes ativos no primeiro ano, 4:30 min de onboarding e 80% de aprovação da plataforma (vs. ~50% antes do lançamento)."],
+      tools:"Jira · Agile · Backlog Management · User Stories · Stakeholder Management · B2B SaaS" },
+    { lbl:"nov 2020 — jun 2023 · 2 anos 8 meses · São Paulo, BR · Remoto", jt:"Product Manager",
+      bullets:["Liderei produtos SaaS do zero à escala, com responsabilidade sobre priorização, métricas de produto e estratégia de crescimento.","Desenvolvi soluções digitais e automações baseadas em regras que eliminaram gargalos críticos na jornada do usuário.","Fui responsável pelo alinhamento técnico entre Product Discovery e implementação, eliminando retrabalho e acelerando entregas.","Gerenciei stakeholders multidisciplinares, traduzindo requisitos complexos de negócio em especificações técnicas acionáveis."],
+      tools:"Product Discovery · User Stories · Automação · Git · GitHub · JavaScript · Java · HTML5 · CSS3 · Agile" },
+    { lbl:"jan 2016 — nov 2020 · 4 anos 11 meses · Florianópolis, BR · Híbrido", jt:"Analista de Negócios",
+      bullets:["Mapeei e otimizei processos críticos de negócio, estruturando bases de dados para decisões estratégicas e ganhos de eficiência operacional.","Desenvolvi relatórios analíticos e dashboards que suportaram a tomada de decisão da liderança executiva.","Documentei processos e geri ferramentas colaborativas (Google Drive, planilhas inteligentes)."],
+      tools:"Mapeamento de Processos · Documentação · Google Drive · Dashboards · Análise de Dados · KPIs" }
+  ],
+  comp:{
+    proficiente:{ lbl:"PROFICIENTE", 0:"Product Strategy · Product Roadmap · Discovery · Gestão de Backlog · User Stories · OKRs", 1:"SaaS B2B · Product-Led Growth (PLG) · IA Generativa · Automação de Jornadas", 2:"Análise de Mercado e Concorrência · Stakeholder Management · Agile · Scrum · Jira" },
+    intermediario:{ lbl:"INTERMEDIÁRIO", 0:"Data-Driven Decision Making · MVP Funcionais · Análise de Dados · KPIs", 1:"Go-to-Market · Product Marketing · Figma · Metabase · Google Analytics", 2:"Lean Startup · Design Thinking · Business Model Canvas" },
+    tecnica:{ lbl:"FAMILIARIDADE TÉCNICA", 0:"Git · GitHub · Java · JavaScript · HTML5 · CSS3 · SQL · Vibe Coding", 1:"Suficiente para dialogar com engenharia e reduzir retrabalho na tradução de requisitos." }
+  },
+  edu:{
+    formacaoData:"JAN 2025 — MAI 2025", formacao:"<strong>Formação Profissional, Product Manager</strong> — PM3",
+    pos:{ lbl:"PÓS-GRADUAÇÃO", txt:"<strong>Gestão de Projetos e Metodologias Ágeis</strong> — Ibmec · MBA" },
+    gradData:"AGO 2014 — AGO 2018", grad:"<strong>Bacharelado, Arquitetura e Urbanismo</strong> — Universidade de Passo Fundo (UPF)",
+    cursos:{ lbl:"CURSOS", 0:"Estratégia de Negócios — Tera (2024)", 1:"UX &amp; Design Thinking — Udemy (2024)", 2:"Business Model Canvas I e II — Alura", 3:"Desenvolvimento de Software: Java, JavaScript, HTML5/CSS3 — Alura", 4:"Lean Startup, Metodologias Ágeis e Gestão de Resultados — Alura" },
+    idiomas:{ lbl:"IDIOMAS", 0:"<strong>Português</strong> — nativo", 1:"<strong>Inglês</strong> — capacidade de leitura técnica, comunicação básica, desenvolvendo comunicação verbal complexa.", 2:"<strong>Espanhol</strong> — capacidade de comunicação verbal complexa, leitura técnica. Programa Polínguas USP (2023)." }
+  },
+  footer:{ cv:"Currículo em PDF" },
+  sheet:{ title:"Falar comigo", hint:"Respondo em até um dia útil. Escolha o canal que preferir.", email:"E-mail", or:"ou escreva aqui", name:"Seu nome", emailField:"Seu e-mail", message:"Mensagem", msgPh:"Sobre qual vaga ou projeto você quer falar?", send:"Enviar mensagem",
+    fillRequired:"Preencha seu e-mail e a mensagem.", badEmail:"Confira o e-mail digitado.", tooLong:"Mensagem muito longa.", sending:"Enviando…", sent:"Mensagem enviada. Respondo em até um dia útil.", sendFail:"Não consegui enviar. Escreva para ", sendFailEnd:" ou chame no WhatsApp.", offline:"Sem conexão no momento. Escreva para " },
+  cp:{ back:"← Voltar aos cases", visaoGeral:"VISÃO GERAL", atuacao:"MINHA ATUAÇÃO", destaques:"DESTAQUES", telas:"TELAS E ARTEFATOS", futuro:"VISÃO DE FUTURO", question:"Quer conversar sobre esse case?", draftSuffix:" · RASCUNHO", slotEmpty:"espaço reservado", slotPending:"imagem pendente" }
+},
+en: {
+  meta:{ title:"Cristina Pesente — Product Manager", description:"Portfolio of Cristina Pesente, Product Manager. Solvefy Agents, Solvefy Marketing, Corporate ERP, and Uno CRM." },
+  nav:{ cases:"Cases", trajetoria:"Experience", cta:"Get in touch" },
+  hero:{ l1:"Hi, I'm Cristina.", l2:"At the intersection of business, tech, UX, and AI,", l3:"Product Manager" },
+  proof:{ v1:"15 days", l1:"from zero to a production MVP", l2:"AI agent response time", l3:"platform approval rating", l4:"active clients in year one" },
+  cases:{ h2:"Cases", items:[
+    {eyebrow:"2026 · MULTI-AGENT PLATFORM", caseline:'From zero to paying customer in 15 days. <span class="dim">Fixed trade-show deadline, open scope.</span>'},
+    {eyebrow:"2025 · MULTICHANNEL ORCHESTRATION", caseline:'From one-off blasts to recurring journeys. <span class="dim">Margin turnaround without losing the base.</span>'},
+    {eyebrow:"2025 · INTERNAL PRODUCT", caseline:'Six modules on a single platform. <span class="dim">From code to deploy with Claude Code.</span>'},
+    {eyebrow:"2024 · GENERATIVE AI CHATBOT", caseline:'600+ clients in the first year. <span class="dim">Bot live in under 5 minutes, no code.</span>'}
+  ]},
+  traj:{ h2:"Experience", lead:"Full-cycle experience with B2B SaaS products, at the intersection of business strategy, technology, and user experience." },
+  blocktitle:{ exp:"EXPERIENCE", comp:"SKILLS", edu:"EDUCATION & LANGUAGES" },
+  jobs:[
+    { lbl:"Dec 2024 — present · 1 yr 8 mo · Florianópolis, BR", jt:"Product Manager",
+      bullets:["Led the MVP of a multi-agent AI platform from zero to launch in 15 days; now with paying customers.","Cut AI agent response time from 12.0s to 9.56s (−20%) through continuous discovery and prioritization driven by real usage data.","Generated initial sales traction via a trade show, validating product-market fit and converting interest into paying customers within the first weeks post-launch.","Own the full lifecycle of two products (Solvefy Agents and Solvefy Marketing), acting as the strategic interface between business and engineering to reduce technical debt and speed up delivery.","Led the margin turnaround of Solvefy Marketing (formerly Disparo Pro), migrating a one-off-blast product to orchestrated multichannel journeys (WhatsApp, SMS, RCS, email, and voice) with AI, raising NPS above target and keeping churn under control through the business-model transition."],
+      tools:"Claude · Figma · Metabase · Google Analytics · Product Roadmap · MRR · PLG · Generative AI · SaaS" },
+    { lbl:"Sep 2024 — Nov 2024 · 3 mo · Florianópolis, BR", jt:"Product Marketing Manager",
+      bullets:["Defined positioning and value proposition, translating technical features into clear market benefits.","Planned and executed end-to-end Go-to-Market strategies for product and feature launches.","Built sales enablement materials (battlecards, sales talking points, training) for the commercial team."],
+      tools:"Go-to-Market · Sales Enablement · Competitive Analysis · Personas · Customer Journey" },
+    { lbl:"Jun 2023 — Sep 2024 · 1 yr 4 mo · Florianópolis, BR", jt:"Product Manager",
+      bullets:["Managed and prioritized a value-driven backlog in a B2B environment, focused on operational efficiency and reducing time-to-market.","Facilitated agile rituals and aligned cross-functional stakeholders to ensure continuous delivery.","Ran market analysis and customer journey mapping to guide product improvements and increase adoption.","Led the Generative AI Chatbot, which let companies deploy custom chatbots without advanced technical skills, defining functions and integrating with communication channels and CRM. 600 active clients in the first year, 4:30 min onboarding, and 80% platform approval (vs. ~50% before launch)."],
+      tools:"Jira · Agile · Backlog Management · User Stories · Stakeholder Management · B2B SaaS" },
+    { lbl:"Nov 2020 — Jun 2023 · 2 yr 8 mo · São Paulo, BR · Remote", jt:"Product Manager",
+      bullets:["Led SaaS products from zero to scale, owning prioritization, product metrics, and growth strategy.","Built digital solutions and rules-based automations that removed critical bottlenecks in the user journey.","Owned technical alignment between Product Discovery and implementation, eliminating rework and speeding up delivery.","Managed cross-functional stakeholders, translating complex business requirements into actionable technical specs."],
+      tools:"Product Discovery · User Stories · Automation · Git · GitHub · JavaScript · Java · HTML5 · CSS3 · Agile" },
+    { lbl:"Jan 2016 — Nov 2020 · 4 yr 11 mo · Florianópolis, BR · Hybrid", jt:"Business Analyst",
+      bullets:["Mapped and optimized critical business processes, structuring databases for strategic decisions and operational efficiency gains.","Built analytical reports and dashboards that supported executive leadership's decision-making.","Documented processes and managed collaborative tools (Google Drive, smart spreadsheets)."],
+      tools:"Process Mapping · Documentation · Google Drive · Dashboards · Data Analysis · KPIs" }
+  ],
+  comp:{
+    proficiente:{ lbl:"PROFICIENT", 0:"Product Strategy · Product Roadmap · Discovery · Backlog Management · User Stories · OKRs", 1:"B2B SaaS · Product-Led Growth (PLG) · Generative AI · Journey Automation", 2:"Market & Competitive Analysis · Stakeholder Management · Agile · Scrum · Jira" },
+    intermediario:{ lbl:"INTERMEDIATE", 0:"Data-Driven Decision Making · Functional MVPs · Data Analysis · KPIs", 1:"Go-to-Market · Product Marketing · Figma · Metabase · Google Analytics", 2:"Lean Startup · Design Thinking · Business Model Canvas" },
+    tecnica:{ lbl:"TECHNICAL FAMILIARITY", 0:"Git · GitHub · Java · JavaScript · HTML5 · CSS3 · SQL · Vibe Coding", 1:"Enough to talk shop with engineering and cut rework when translating requirements." }
+  },
+  edu:{
+    formacaoData:"JAN 2025 — MAY 2025", formacao:"<strong>Professional Certification, Product Manager</strong> — PM3",
+    pos:{ lbl:"GRADUATE STUDIES", txt:"<strong>Project Management and Agile Methodologies</strong> — Ibmec · MBA" },
+    gradData:"AUG 2014 — AUG 2018", grad:"<strong>Bachelor's Degree, Architecture and Urbanism</strong> — Universidade de Passo Fundo (UPF)",
+    cursos:{ lbl:"COURSES", 0:"Business Strategy — Tera (2024)", 1:"UX &amp; Design Thinking — Udemy (2024)", 2:"Business Model Canvas I & II — Alura", 3:"Software Development: Java, JavaScript, HTML5/CSS3 — Alura", 4:"Lean Startup, Agile Methodologies, and Results Management — Alura" },
+    idiomas:{ lbl:"LANGUAGES", 0:"<strong>Portuguese</strong> — native", 1:"<strong>English</strong> — technical reading proficiency, basic communication, developing complex verbal communication.", 2:"<strong>Spanish</strong> — complex verbal communication proficiency, technical reading. USP Polínguas Program (2023)." }
+  },
+  footer:{ cv:"Résumé (PDF)" },
+  sheet:{ title:"Get in touch", hint:"I reply within one business day. Pick whichever channel works for you.", email:"Email", or:"or write here", name:"Your name", emailField:"Your email", message:"Message", msgPh:"What role or project would you like to talk about?", send:"Send message",
+    fillRequired:"Please fill in your email and message.", badEmail:"Check the email address.", tooLong:"Message is too long.", sending:"Sending…", sent:"Message sent. I reply within one business day.", sendFail:"Couldn't send it. Please email ", sendFailEnd:" or reach out on WhatsApp.", offline:"No connection right now. Please email " },
+  cp:{ back:"← Back to cases", visaoGeral:"OVERVIEW", atuacao:"MY ROLE", destaques:"HIGHLIGHTS", telas:"SCREENS & ARTIFACTS", futuro:"WHAT'S NEXT", question:"Want to talk about this case?", draftSuffix:" · DRAFT", slotEmpty:"reserved slot", slotPending:"image pending" }
+},
+es: {
+  meta:{ title:"Cristina Pesente — Product Manager", description:"Portafolio de Cristina Pesente, Product Manager. Solvefy Agents, Solvefy Marketing, ERP Corporativo y Uno CRM." },
+  nav:{ cases:"Cases", trajetoria:"Mi trayectoria", cta:"Hablemos" },
+  hero:{ l1:"Hola, soy Cristina.", l2:"En la intersección de negocio, tecnología, UX e IA,", l3:"Product Manager" },
+  proof:{ v1:"15 días", l1:"de cero a MVP en producción", l2:"respuesta de los agentes de IA", l3:"aprobación de la plataforma", l4:"clientes activos en el 1er año" },
+  cases:{ h2:"Cases", items:[
+    {eyebrow:"2026 · PLATAFORMA MULTIAGENTE", caseline:'De cero a cliente de pago en 15 días. <span class="dim">Fecha fija de feria, alcance abierto.</span>'},
+    {eyebrow:"2025 · ORQUESTACIÓN MULTICANAL", caseline:'De envíos puntuales a jornadas recurrentes. <span class="dim">Turnaround de margen sin perder la base.</span>'},
+    {eyebrow:"2025 · PRODUCTO INTERNO", caseline:'Seis módulos en una sola plataforma. <span class="dim">Del código al deploy con Claude Code.</span>'},
+    {eyebrow:"2024 · CHATBOT DE IA GENERATIVA", caseline:'600+ clientes en el primer año. <span class="dim">Bot activo en menos de 5 minutos, sin código.</span>'}
+  ]},
+  traj:{ h2:"Mi trayectoria", lead:"Experiencia en el ciclo completo de productos SaaS B2B, en la intersección entre estrategia de negocio, tecnología y experiencia de usuario." },
+  blocktitle:{ exp:"EXPERIENCIA", comp:"COMPETENCIAS", edu:"FORMACIÓN E IDIOMAS" },
+  jobs:[
+    { lbl:"dic 2024 — actualidad · 1 año 8 meses · Florianópolis, BR", jt:"Product Manager",
+      bullets:["Lideré el MVP de una plataforma multiagente de IA de cero al lanzamiento en 15 días; hoy con clientes de pago.","Reduje el tiempo de respuesta de los agentes de IA de 12,0s a 9,56s (−20%) mediante discovery continuo y priorización orientada a datos de uso real.","Generé tracción inicial de ventas a través de una feria comercial, validando product-market fit y convirtiendo interés en clientes de pago en las primeras semanas tras el lanzamiento.","Lidero el ciclo de vida completo de dos productos (Solvefy Agents y Solvefy Marketing), actuando como interfaz estratégica entre negocio e ingeniería para reducir deuda técnica y acelerar entregas.","Conduje el turnaround de margen de Solvefy Marketing (ex-Disparo Pro), migrando un producto de envíos puntuales a jornadas multicanal orquestadas (WhatsApp, SMS, RCS, email y voz) con IA, elevando el NPS por encima de la meta y manteniendo el churn bajo control durante la transición de modelo de negocio."],
+      tools:"Claude · Figma · Metabase · Google Analytics · Product Roadmap · MRR · PLG · IA Generativa · SaaS" },
+    { lbl:"sept 2024 — nov 2024 · 3 meses · Florianópolis, BR", jt:"Product Marketing Manager",
+      bullets:["Definí posicionamiento y propuesta de valor, traduciendo funcionalidades técnicas en beneficios claros para el mercado.","Planifiqué y ejecuté estrategias de Go-to-Market de punta a punta para lanzamientos de producto y funcionalidades.","Creé materiales de sales enablement (battlecards, argumentos de venta, capacitaciones) para el equipo comercial."],
+      tools:"Go-to-Market · Sales Enablement · Análisis de la Competencia · Personas · Recorrido del Cliente" },
+    { lbl:"jun 2023 — sept 2024 · 1 año 4 meses · Florianópolis, BR", jt:"Product Manager",
+      bullets:["Gestioné y prioricé el backlog orientado a valor en un entorno B2B, con foco en eficiencia operacional y reducción del time-to-market.","Facilité rituales ágiles y alineé stakeholders multidisciplinarios para garantizar la entrega continua.","Realicé análisis de mercado y mapeo del recorrido del cliente para orientar mejoras de producto y aumentar la adopción.","Lideré el Chatbot de IA Generativa, que permitió a las empresas implementar chatbots personalizados sin exigir habilidades técnicas avanzadas, definiendo funciones e integrando con canales de comunicación y CRM. 600 clientes activos en el primer año, 4:30 min de onboarding y 80% de aprobación de la plataforma (vs. ~50% antes del lanzamiento)."],
+      tools:"Jira · Agile · Backlog Management · User Stories · Stakeholder Management · B2B SaaS" },
+    { lbl:"nov 2020 — jun 2023 · 2 años 8 meses · São Paulo, BR · Remoto", jt:"Product Manager",
+      bullets:["Lideré productos SaaS de cero a escala, con responsabilidad sobre priorización, métricas de producto y estrategia de crecimiento.","Desarrollé soluciones digitales y automatizaciones basadas en reglas que eliminaron cuellos de botella críticos en el recorrido del usuario.","Fui responsable del alineamiento técnico entre Product Discovery e implementación, eliminando retrabajo y acelerando entregas.","Gestioné stakeholders multidisciplinarios, traduciendo requisitos complejos de negocio en especificaciones técnicas accionables."],
+      tools:"Product Discovery · User Stories · Automatización · Git · GitHub · JavaScript · Java · HTML5 · CSS3 · Agile" },
+    { lbl:"ene 2016 — nov 2020 · 4 años 11 meses · Florianópolis, BR · Híbrido", jt:"Analista de Negocios",
+      bullets:["Mapeé y optimicé procesos críticos de negocio, estructurando bases de datos para decisiones estratégicas y ganancias de eficiencia operacional.","Desarrollé informes analíticos y dashboards que respaldaron la toma de decisiones de la dirección ejecutiva.","Documenté procesos y gestioné herramientas colaborativas (Google Drive, planillas inteligentes)."],
+      tools:"Mapeo de Procesos · Documentación · Google Drive · Dashboards · Análisis de Datos · KPIs" }
+  ],
+  comp:{
+    proficiente:{ lbl:"AVANZADO", 0:"Product Strategy · Product Roadmap · Discovery · Gestión de Backlog · User Stories · OKRs", 1:"SaaS B2B · Product-Led Growth (PLG) · IA Generativa · Automatización de Jornadas", 2:"Análisis de Mercado y Competencia · Stakeholder Management · Agile · Scrum · Jira" },
+    intermediario:{ lbl:"INTERMEDIO", 0:"Data-Driven Decision Making · MVPs Funcionales · Análisis de Datos · KPIs", 1:"Go-to-Market · Product Marketing · Figma · Metabase · Google Analytics", 2:"Lean Startup · Design Thinking · Business Model Canvas" },
+    tecnica:{ lbl:"FAMILIARIDAD TÉCNICA", 0:"Git · GitHub · Java · JavaScript · HTML5 · CSS3 · SQL · Vibe Coding", 1:"Suficiente para dialogar con ingeniería y reducir retrabajo en la traducción de requisitos." }
+  },
+  edu:{
+    formacaoData:"ENE 2025 — MAY 2025", formacao:"<strong>Formación Profesional, Product Manager</strong> — PM3",
+    pos:{ lbl:"POSGRADO", txt:"<strong>Gestión de Proyectos y Metodologías Ágiles</strong> — Ibmec · MBA" },
+    gradData:"AGO 2014 — AGO 2018", grad:"<strong>Licenciatura, Arquitectura y Urbanismo</strong> — Universidade de Passo Fundo (UPF)",
+    cursos:{ lbl:"CURSOS", 0:"Estrategia de Negocios — Tera (2024)", 1:"UX y Design Thinking — Udemy (2024)", 2:"Business Model Canvas I y II — Alura", 3:"Desarrollo de Software: Java, JavaScript, HTML5/CSS3 — Alura", 4:"Lean Startup, Metodologías Ágiles y Gestión de Resultados — Alura" },
+    idiomas:{ lbl:"IDIOMAS", 0:"<strong>Portugués</strong> — nativo", 1:"<strong>Inglés</strong> — capacidad de lectura técnica, comunicación básica, desarrollando comunicación verbal compleja.", 2:"<strong>Español</strong> — capacidad de comunicación verbal compleja, lectura técnica. Programa Polínguas USP (2023)." }
+  },
+  footer:{ cv:"Currículum en PDF" },
+  sheet:{ title:"Hablemos", hint:"Respondo en menos de un día hábil. Elige el canal que prefieras.", email:"Email", or:"o escribe aquí", name:"Tu nombre", emailField:"Tu email", message:"Mensaje", msgPh:"¿Sobre qué puesto o proyecto quieres hablar?", send:"Enviar mensaje",
+    fillRequired:"Completa tu email y el mensaje.", badEmail:"Revisa el email ingresado.", tooLong:"El mensaje es demasiado largo.", sending:"Enviando…", sent:"Mensaje enviado. Respondo en menos de un día hábil.", sendFail:"No pude enviarlo. Escribe a ", sendFailEnd:" o escribe por WhatsApp.", offline:"Sin conexión en este momento. Escribe a " },
+  cp:{ back:"← Volver a los cases", visaoGeral:"VISIÓN GENERAL", atuacao:"MI ROL", destaques:"DESTACADOS", telas:"PANTALLAS Y MATERIALES", futuro:"VISIÓN A FUTURO", question:"¿Quieres hablar sobre este case?", draftSuffix:" · BORRADOR", slotEmpty:"espacio reservado", slotPending:"imagen pendiente" }
+}
+};
+
+const CASES_EN = {
+"uno-crm": {
+  who: "UNO OBJECT ERP | CRM · JUN 2023 — SEP 2024 · PRODUCT MANAGER",
+  titulo: "Generative AI Chatbot",
+  lead: "Custom, omnichannel chatbots defined in plain language — no advanced technical skills required from the business setting them up.",
+  destaques: [
+    {tag:"ADOPTION", txt:"600+ clients in the first year"},
+    {tag:"TIME TO VALUE", txt:"Under 5 min to create and activate a bot"},
+    {tag:"SATISFACTION", txt:"80% approval reported by users"},
+    {tag:"SCOPE", txt:"End-to-end, from discovery to launch"}
+  ],
+  visaoGeral: [
+    "Uno Object is a platform focused on ERP solutions for aesthetics clinics, with client franchises of significant regional presence in southern Brazil, such as Mais Laser and Lisô Laser. The Generative AI Chatbot was built to change how chatbots get built: simplifying creation and customization to make the feature accessible to a wide range of businesses.",
+    "The product lets companies design and deploy custom, omnichannel chatbots through an intuitive interface that requires no advanced technical skills. Users define the chatbot's functions in plain language and connect it to the various communication channels available through the Uno CRM API."
+  ],
+  atuacao: {
+    intro: "As Product Manager, I led the end-to-end build of this product, from discovery to launch. The goal was clear: cut setup time and make activation easier for new clients, with governance, metrics, and continuous product evolution.",
+    bullets: [
+      "Reduced onboarding friction, with a focus on activation and <em>time to value</em>.",
+      "Standardized flows and components to speed up delivery and keep consistency.",
+      "Tracked adoption and quality metrics to guide prioritization.",
+      "Collaborated with engineering, design, and stakeholders on strategic alignment."
+    ]
+  },
+  blocosTitulo: "HIGHLIGHTS",
+  blocos: [
+    {t:"Simplified setup", d:"An intuitive interface that requires no advanced technical skills, letting anyone define the chatbot's functions in plain language."},
+    {t:"Brand personalization", d:"Ability to mirror the brand's tone, driving more natural, authentic interactions with customers."},
+    {t:"Advanced processing", d:"Advanced natural language processing that delivers accurate responses and understands complex queries."},
+    {t:"Measurable results", d:"Improved user engagement, higher productivity, and streamlined communication workflows."}
+  ],
+  telas: [
+    {f:"unocrm-funcionalidades.webp", c:"Platform capabilities: omnichannel chat, AI agents, automated pipeline, message journeys, real-time metrics, and activity management."},
+    {f:"unocrm-dashboard.webp", c:"Results dashboard: message funnel, delivery and response rates, conversion, and revenue generated per campaign."},
+    {f:"unocrm-sugestoes-ia.webp", c:"AI suggestions on the conversation: stage changes, lead temperature, activities, and notes — the agent approves, rejects, or edits."}
+  ],
+  futuro: "The product roadmap includes real-time sentiment analysis and continuous-learning capabilities, letting the chatbot keep evolving from interactions and user feedback. Development involved extensive testing with clients, with early results pointing to a positive impact on user satisfaction."
+},
+
+"erp-corporativo": {
+  who: "SOLVEFY · 2025 · PRODUCT MANAGER",
+  titulo: "Corporate ERP",
+  lead: "Six modules in a single internal product, built from first line of code to production deploy with Claude Code.",
+  destaques: [
+    {tag:"SCOPE", txt:"6 modules integrated into a single platform"},
+    {tag:"ADOPTION", txt:"Every department using the product daily"},
+    {tag:"BUILD", txt:"100% Claude Code, from code to deploy with AI"},
+    {tag:"ROLE", txt:"End-to-end, from ideation to internal adoption"}
+  ],
+  visaoGeral: [
+    "Solvefy's corporate ERP was born from the need to centralize task management, decisions, and strategic alignment across every area of the company. Instead of relying on multiple scattered tools, the company moved to a single internal product, built to match the way the team actually works.",
+    "The product brings together, in one place, the Tasks, OKRs & Strategic Planning, Projects, Product, Engineering, and Corporate Travel modules, and is used by every department in the company's daily operations.",
+    "The entire platform was built with Claude Code, from the first line of code to production deploy, with the product team coding directly and engineering reviewing every change before it shipped."
+  ],
+  atuacao: {
+    intro: "As Product Manager, I conceived and led the ERP's development from scratch, defining the product vision, prioritizing modules by business value, and following delivery alongside the engineering team.",
+    bullets: [
+      "Defined the product vision and prioritized modules based on each department's real needs.",
+      "Designed the flows for Tasks, OKRs, Projects, Product, Engineering, and Corporate Travel.",
+      "Tracked adoption across every department, gathering continuous feedback to evolve the platform.",
+      "Worked directly with engineering to prioritize and validate technical deliverables.",
+      "Used Claude Code to build and ship the ERP's features, with engineering reviewing every change before production deploy."
+    ]
+  },
+  blocosTitulo: "PLATFORM MODULES",
+  blocos: [
+    {t:"Tasks", d:"Task hub used by every department in the company, with shared visibility into work progress across areas."},
+    {t:"OKRs &amp; Strategic Planning", d:"Tracks the company's OKRs with progress percentage per objective, connecting strategic planning to day-to-day execution."},
+    {t:"Projects", d:"Collaborative space to log information and track progress on projects across different areas of the company."},
+    {t:"Product", d:"Roadmap, PRD creation, documentation, and a feedback channel, giving the product team a complete flow from discovery to delivery."},
+    {t:"Engineering", d:"Module built for engineering, centralizing code repositories, technical tasks, and team documentation in one place."},
+    {t:"Corporate Travel", d:"Corporate travel requests and management by employees, with trip association and request tracking inside the platform itself."}
+  ],
+  telas: null,
+  notaTelas: "An internal Solvefy product, in active daily use across every department of the company. The screens show sensitive corporate data — OKRs, projects in progress, employee information, and technical documentation — and are therefore not shared publicly.",
+  notaTelasObs: "Guided demo available under a non-disclosure agreement.",
+  futuro: "The ERP roadmap includes continuous evolution of the existing modules and exploring AI automation to speed up filling in tasks, PRDs, and OKR tracking, making the tool increasingly proactive in supporting decision-making."
+},
+
+"solvefy-agents": {
+  who: "SOLVEFY · DEC 2024 — PRESENT · PRODUCT MANAGER",
+  titulo: "Solvefy Agents",
+  lead: "A multi-agent AI platform taken from zero to a paying customer in 15 days, under a fixed trade-show deadline and an open scope.",
+  destaques: [
+    {tag:"DELIVERY", txt:"From zero to a production MVP in 15 days"},
+    {tag:"PERFORMANCE", txt:"Agent response time from 12.0s to 9.56s (−20%)"},
+    {tag:"TRACTION", txt:"Paying customers within the first weeks post-launch"},
+    {tag:"SCOPE", txt:"End-to-end, from ideation to launch"}
+  ],
+  visaoGeral: [
+    "Solvefy Agents is a multi-agent AI platform built for content production and marketing operations at client companies. Instead of exposing users to a collection of standalone tools, the product offers a single point of conversation: an orchestrator agent that reads the request and calls in the right specialist — a LinkedIn post, an Instagram carousel, an article, a Reels script — and hands back the finished result.",
+    "The platform is multi-tenant and comes with its own admin panel, covering tenant management, an agent and team catalog, billing and plan control, in-app communication, AI model governance, and service observability.",
+    "The MVP was built under an unusual constraint: the trade-show date was already locked in. The deadline was fixed and the scope was open — which flipped the usual prioritization logic and turned every product decision into a decision about what wouldn't make the cut."
+  ],
+  atuacao: {
+    intro: "As Product Manager, I led the product from zero to launch and remain responsible for its lifecycle, acting as the interface between business and engineering. The goal was to arrive at the trade show with something demonstrable and sellable, without compromising the technical foundation the next stage of the product would need.",
+    bullets: [
+      "Scoped the MVP under a fixed deadline: cut the feature set back from the trade-show date, deciding what shipped and what waited.",
+      "Ran continuous discovery and usage-data-driven prioritization, which underpinned the drop in agent response time from 12.0s to 9.56s.",
+      "Designed the agent architecture — orchestrator and specialists — and the configuration model by <em>system prompt</em>, provider, model, and temperature.",
+      "Structured the admin panel: per-task model governance, environment feature flags, and granular super-admin permissions.",
+      "Generated initial traction at the trade show, validating product-market fit and converting interest into paying customers.",
+      "Acted as the strategic interface between business and engineering to reduce technical debt and speed up the following deliveries."
+    ]
+  },
+  blocosTitulo: "HIGHLIGHTS",
+  blocos: [
+    {t:"Orchestrator and specialist agents", d:"A lead agent is the user's only point of conversation: it understands the request and delegates to the right skill, presenting the result as a single, unified voice."},
+    {t:"Per-task model governance", d:"Each task type — chat, web search, vision, structured JSON, titles, summaries, image generation — has its own configurable model. Changes apply at runtime, no redeploy required."},
+    {t:"Environment feature flags", d:"Features are switched on and off without a deploy, evaluated against the user's context. Each environment is configured separately, with audience rules and gradual percentage rollout; production only changes with an explicit promotion."},
+    {t:"In-product communication", d:"Maintenance notices and modals with severity and display windows, step-by-step guided tours per route, and a suggestions channel where customers track their own request through its stages."},
+    {t:"Multi-tenant governance", d:"Super-admin permissions granted section by section, immutable Terms of Use versioning with up to two active versions at once, and API keys issued at the workspace or organization scope."},
+    {t:"Operational observability", d:"Service and dependency health, processing queues, and recent errors, all in a single panel, for diagnosis without needing infrastructure access."}
+  ],
+  telas: [
+    {f:"agents-catalogo.webp", c:"Agent catalog: each agent specializes in one task. Users pick one to get started or assemble a team to chain several together."},
+    {f:"agents-automacoes.webp", c:"Automations run flows on a recurring, scheduled basis, with ready-made templates per channel and tracking of runs and estimated credit."},
+    {f:"agents-conversa.webp", c:"The conversation is the only entry point: a natural-language request calls in the specialist and returns a finished asset."},
+    {f:"agents-carrossel.webp", c:"Result delivered right inside the chat — a full carousel, with copy, hashtags, and generated images."}
+  ],
+  futuro: "The product's evolution keeps following real agent usage data, focused on expanding the catalog of available specialists, further reducing response time, and maturing the observability layer — today only partially instrumented — so prioritization stops relying on manual reading and is instead sustained by continuous metrics."
+},
+
+"solvefy-marketing": {
+  who: "SOLVEFY · DEC 2024 — PRESENT · PRODUCT MANAGER",
+  titulo: "Solvefy Marketing",
+  lead: "A margin turnaround carried out without losing the customer base: from one-off blasts to recurring, AI-orchestrated multichannel journeys.",
+  destaques: [
+    {tag:"MODEL", txt:"From one-off blasts to recurring journeys"},
+    {tag:"CHANNELS", txt:"WhatsApp, SMS, RCS, email, and voice orchestrated"},
+    {tag:"SATISFACTION", txt:"NPS above target throughout the transition"},
+    {tag:"RETENTION", txt:"Churn kept under control through the business-model change"}
+  ],
+  visaoGeral: [
+    "Solvefy Marketing is the evolution of Disparo Pro: the same operation and the same team, under a repositioned brand. The original product sold one-off blasts — customers bought credits, ran a campaign, and disappeared until the next need arose. A revenue model that was erratic, thin-margin, and unpredictable.",
+    "The turnaround was to reframe blasts as journeys: automated flows that trigger for contacts by segment or across the consolidated base, orchestrating WhatsApp, SMS, RCS, email, and voice on a recurring basis, with an AI layer reading campaign performance.",
+    "The central risk wasn't technical. It was migrating an already-established base, used to buying credit and firing off a blast, to a subscription and recurrence model — without the brand and billing-logic change being read as a loss of value."
+  ],
+  atuacao: {
+    intro: "As Product Manager, I led the product's margin turnaround, owning it alongside Solvefy Agents. The transition had to happen without rupture: changing the business model, the brand, and the value proposition while the active base kept using the product the whole time.",
+    bullets: [
+      "Led the margin turnaround, migrating the product from one-off blasts to orchestrated multichannel journeys.",
+      "Designed the journeys: entry rules by segment or consolidated base, versioning, and controlled publishing.",
+      "Unified the five channels — WhatsApp, SMS, RCS, email, and voice — under a single campaign-creation flow.",
+      "Managed the base's transition through the billing-model change, keeping NPS above target and churn under control.",
+      "Oversaw the rebrand from Disparo Pro to Solvefy Marketing, preserving the recognition the previous brand had built."
+    ]
+  },
+  blocosTitulo: "HIGHLIGHTS",
+  blocos: [
+    {t:"Orchestrated journeys", d:"Automations that start for contacts in specific segments or across the entire consolidated base, with drafts, version history, and an explicit alert when the chosen rule reaches a large volume."},
+    {t:"Step-by-step campaign creation", d:"A guided flow for channel, content, recipient, and confirmation. The channel is set at the start and locked at confirmation, avoiding the operation's costliest mistake: sending through the wrong channel."},
+    {t:"Contact base and segmentation", d:"Sourced from a saved segment, an already-imported file, or a new upload, with column-by-column spreadsheet mapping and control over what gets included. Sending only starts once processing finishes."},
+    {t:"AI-driven performance reading", d:"An intelligent summary of the period and a performance comparison by channel — deliveries, CTR, conversions, and cost — to guide where the next send should invest."},
+    {t:"Plan and usage management", d:"Visibility into resource usage, consumption by channel, and overage credits, with the billing rule explained right in the panel — a centerpiece of the migration to the recurring model."},
+    {t:"Brand transition without rupture", d:"Communication owned the continuity instead of hiding it: same operation, same team, new brand. The reference to Disparo Pro stayed visible throughout the transition."}
+  ],
+  telas: [
+    {f:"marketing-rebrand.webp", c:"The brand transition owned right at the front door: Solvefy Marketing, powered by Disparo Pro — same operation, same team, new brand."},
+    {f:"marketing-disparo.webp", c:"Step-by-step campaign creation. The channel is chosen at the start and locked at confirmation, avoiding the operation's costliest mistake."},
+    {f:"marketing-jornada.webp", c:"Contacts entering the journey: specific segments or consolidated base, with an explicit warning when the rule reaches a large volume."},
+    {f:"marketing-performance.webp", c:"Performance reading by channel with an AI-generated summary. Demo interface — the numbers shown are illustrative."}
+  ],
+  futuro: "The roadmap continues deepening the journeys — more triggers, more branching, and deeper use of AI in recommending the next action — and consolidating the base's migration to the recurring model, with the usage and plan gauges sustaining the revenue predictability the previous model never delivered."
+}
+};
+
+const CASES_ES = {
+"uno-crm": {
+  who: "UNO OBJECT ERP | CRM · JUN 2023 — SEP 2024 · PRODUCT MANAGER",
+  titulo: "Chatbot de IA Generativa",
+  lead: "Chatbots personalizados y omnicanal, definidos en lenguaje simple — sin exigir habilidades técnicas avanzadas de quien los contrata.",
+  destaques: [
+    {tag:"ADOPCIÓN", txt:"600+ clientes en el primer año"},
+    {tag:"TIME TO VALUE", txt:"Menos de 5 min para crear y activar un bot"},
+    {tag:"SATISFACCIÓN", txt:"80% de aprobación reportada por usuarios"},
+    {tag:"ALCANCE", txt:"End-to-end, del descubrimiento al lanzamiento"}
+  ],
+  visaoGeral: [
+    "Uno Object es una plataforma enfocada en soluciones de ERP para clínicas de estética, con franquicias clientes de gran presencia en el sur de Brasil, como Mais Laser y Lisô Laser. El Chatbot de IA Generativa nació para transformar el desarrollo de chatbots: simplificar la creación y la personalización, haciendo el recurso accesible a una amplia gama de negocios.",
+    "El producto permite que las empresas diseñen e implementen chatbots personalizados con facilidad omnicanal, a través de una interfaz intuitiva que no requiere habilidades técnicas avanzadas. Los usuarios definen las funciones del chatbot en lenguaje simple y lo integran a varios canales de comunicación disponibles a través de la API de Uno CRM."
+  ],
+  atuacao: {
+    intro: "Como Product Manager, lideré la construcción end-to-end de este producto, del descubrimiento al lanzamiento. La meta era clara: reducir el tiempo de configuración y facilitar la activación para nuevos clientes, con gobernanza, métricas y evolución continua del producto.",
+    bullets: [
+      "Reducción de la fricción de onboarding, con foco en activación y <em>time to value</em>.",
+      "Estandarización de flujos y componentes para acelerar entregas y mantener consistencia.",
+      "Seguimiento de métricas de adopción y calidad para orientar la priorización.",
+      "Colaboración con equipos de ingeniería, diseño y stakeholders para el alineamiento estratégico."
+    ]
+  },
+  blocosTitulo: "DESTACADOS",
+  blocos: [
+    {t:"Simplificación del proceso", d:"Interfaz intuitiva que no requiere habilidades técnicas avanzadas, permitiendo definir funciones del chatbot en lenguaje simple."},
+    {t:"Personalización de marca", d:"Capacidad de imitar el tono de la marca, promoviendo interacciones más naturales y auténticas con los clientes."},
+    {t:"Procesamiento avanzado", d:"Recursos avanzados de procesamiento de lenguaje natural, que ofrecen respuestas precisas y comprensión de consultas complejas."},
+    {t:"Resultados medibles", d:"Mejora en el engagement del usuario, aumento de la productividad y flujos de comunicación simplificados."}
+  ],
+  telas: [
+    {f:"unocrm-funcionalidades.webp", c:"Funcionalidades de la plataforma: chat omnicanal, agentes de IA, pipeline automatizado, jornadas de mensajes, métricas en tiempo real y gestión de actividades."},
+    {f:"unocrm-dashboard.webp", c:"Dashboard de resultados: embudo de mensajes, tasas de entrega y respuesta, conversión e ingresos generados por campaña."},
+    {f:"unocrm-sugestoes-ia.webp", c:"Sugerencias de la IA sobre la conversación: cambio de etapa, temperatura del lead, actividades y notas — el agente aprueba, rechaza o edita."}
+  ],
+  futuro: "El roadmap del producto incluye análisis de sentimiento en tiempo real y capacidades de aprendizaje continuo, permitiendo que el chatbot evolucione constantemente a partir de las interacciones y el feedback de los usuarios. El desarrollo incluyó pruebas extensas con clientes, con resultados iniciales que indican un impacto positivo en la satisfacción del usuario."
+},
+
+"erp-corporativo": {
+  who: "SOLVEFY · 2025 · PRODUCT MANAGER",
+  titulo: "ERP Corporativo",
+  lead: "Seis módulos en un único producto interno, construido desde la primera línea de código hasta el deploy en producción con Claude Code.",
+  destaques: [
+    {tag:"ALCANCE", txt:"6 módulos integrados en una única plataforma"},
+    {tag:"ADOPCIÓN", txt:"Todas las áreas usando el producto en el día a día"},
+    {tag:"CONSTRUCCIÓN", txt:"100% Claude Code, del código al deploy con IA"},
+    {tag:"ROL", txt:"End-to-end, de la ideación a la adopción interna"}
+  ],
+  visaoGeral: [
+    "El ERP corporativo de Solvefy nació de la necesidad de centralizar la gestión de tareas, decisiones y alineamientos estratégicos entre todas las áreas de la empresa. En lugar de depender de múltiples herramientas dispersas, la empresa pasó a contar con un producto interno único, construido a la medida de cómo trabaja el equipo.",
+    "El producto reúne, en un solo lugar, los módulos de Tareas, OKRs y Planificación Estratégica, Proyectos, Producto, Ingeniería y Viajes Corporativos, siendo utilizado por todos los departamentos de la empresa en el día a día.",
+    "Toda la plataforma fue construida con Claude Code, desde la primera línea de código hasta el deploy en producción, con el equipo de producto programando directamente y el equipo de ingeniería revisando cada entrega antes de publicarla."
+  ],
+  atuacao: {
+    intro: "Como Product Manager, idealicé y conduje el desarrollo del ERP desde cero, definiendo la visión de producto, priorizando los módulos según el valor de negocio y acompañando la entrega junto al equipo de ingeniería.",
+    bullets: [
+      "Definición de la visión de producto y priorización de los módulos según las necesidades reales de cada área.",
+      "Diseño de los flujos de Tareas, OKRs, Proyectos, Producto, Ingeniería y Viajes Corporativos.",
+      "Seguimiento de la adopción en todas las áreas de la empresa, recolectando feedback continuo para la evolución de la plataforma.",
+      "Colaboración directa con el equipo de ingeniería para priorizar y validar entregas técnicas.",
+      "Uso de Claude Code para programar y publicar las funcionalidades del ERP, con ingeniería revisando cada entrega antes del deploy en producción."
+    ]
+  },
+  blocosTitulo: "MÓDULOS DE LA PLATAFORMA",
+  blocos: [
+    {t:"Tareas", d:"Hub de tareas usado por todos los departamentos de la empresa, con visibilidad compartida del avance del trabajo entre las áreas."},
+    {t:"OKRs y Planificación Estratégica", d:"Seguimiento de los OKRs de la empresa con porcentaje de avance por objetivo, conectando la planificación estratégica con la ejecución diaria."},
+    {t:"Proyectos", d:"Espacio colaborativo para registrar información y seguir el avance de proyectos entre diferentes áreas de la empresa."},
+    {t:"Producto", d:"Roadmap, creación de PRDs, documentación y canal de feedback, dando al equipo de producto un flujo completo del discovery a la entrega."},
+    {t:"Ingeniería", d:"Módulo orientado a ingeniería, centralizando repositorios de código, tareas técnicas y documentación del equipo en un único lugar."},
+    {t:"Viajes Corporativos", d:"Solicitud y gestión de viajes corporativos por parte de los colaboradores, con asociación de viajes y seguimiento de solicitudes dentro de la propia plataforma."}
+  ],
+  telas: null,
+  notaTelas: "Producto interno de Solvefy, en uso constante por todas las áreas de la empresa. Las pantallas muestran datos corporativos sensibles — OKRs, proyectos en curso, información de colaboradores y documentación técnica — por lo que no se comparten públicamente.",
+  notaTelasObs: "Demostración guiada disponible bajo acuerdo de confidencialidad.",
+  futuro: "El roadmap del ERP contempla la evolución continua de los módulos existentes y la exploración de automatizaciones con Inteligencia Artificial para acelerar el llenado de tareas, PRDs y el seguimiento de OKRs, haciendo la herramienta cada vez más proactiva en el apoyo a la toma de decisiones."
+},
+
+"solvefy-agents": {
+  who: "SOLVEFY · DIC 2024 — ACTUALIDAD · PRODUCT MANAGER",
+  titulo: "Solvefy Agents",
+  lead: "Plataforma multiagente de IA llevada de cero a cliente de pago en 15 días, con fecha fija de feria comercial y alcance abierto.",
+  destaques: [
+    {tag:"ENTREGA", txt:"De cero a MVP en producción en 15 días"},
+    {tag:"RENDIMIENTO", txt:"Respuesta de los agentes de 12,0s a 9,56s (−20%)"},
+    {tag:"TRACCIÓN", txt:"Clientes de pago en las primeras semanas tras el lanzamiento"},
+    {tag:"ALCANCE", txt:"End-to-end, de la ideación al lanzamiento"}
+  ],
+  visaoGeral: [
+    "Solvefy Agents es una plataforma multiagente de IA orientada a la producción de contenido y la operación de marketing de las empresas clientes. En lugar de exponer al usuario a una colección de herramientas sueltas, el producto ofrece un único punto de conversación: un agente orquestador que interpreta el pedido y activa al especialista correcto — post de LinkedIn, carrusel de Instagram, artículo, guion de Reels — devolviendo el resultado listo.",
+    "La plataforma es multi-tenant y cuenta con su propio panel de administración, con gestión de tenants, catálogo de agentes y equipos, facturación y control de planes, comunicación in-app, gobernanza de modelos de IA y observabilidad de los servicios.",
+    "El MVP se construyó bajo una restricción poco habitual: la fecha de una feria comercial ya estaba fijada. El plazo era fijo y el alcance, abierto — lo que invirtió la lógica de priorización habitual y convirtió cada decisión de producto en una decisión sobre qué no entraría."
+  ],
+  atuacao: {
+    intro: "Como Product Manager, lideré el producto de cero al lanzamiento y sigo siendo responsable de su ciclo de vida, actuando como interfaz entre negocio e ingeniería. La meta era llegar a la feria con algo demostrable y vendible, sin comprometer la base técnica que sostendría la evolución siguiente.",
+    bullets: [
+      "Definición del alcance bajo plazo fijo: recorte del MVP a partir de la fecha de la feria, decidiendo qué entraba y qué quedaba para después.",
+      "Discovery continuo y priorización orientada a datos de uso real, que sostuvieron la reducción del tiempo de respuesta de los agentes de 12,0s a 9,56s.",
+      "Diseño de la arquitectura de agentes — orquestador y especialistas — y del modelo de configuración por <em>system prompt</em>, proveedor, modelo y temperatura.",
+      "Estructuración del panel de administración: gobernanza de modelos por tarea, feature flags por entorno y permisos granulares de super-admin.",
+      "Generación de tracción inicial en la feria comercial, validando product-market fit y convirtiendo interés en clientes de pago.",
+      "Interfaz estratégica entre negocio e ingeniería para reducir deuda técnica y acelerar las entregas siguientes."
+    ]
+  },
+  blocosTitulo: "DESTACADOS",
+  blocos: [
+    {t:"Orquestador y agentes especialistas", d:"Un agente principal es el único punto de conversación del usuario: entiende el pedido y delega en la habilidad correcta, presentando el resultado de forma unificada. Para quien lo usa, existe una sola voz."},
+    {t:"Gobernanza de modelos por tarea", d:"Cada tipo de tarea — chat, búsqueda web, visión, JSON estructurado, títulos, resúmenes, generación de imágenes — tiene su propio modelo configurable. Los cambios se aplican en runtime, sin redeploy."},
+    {t:"Feature flags por entorno", d:"Funcionalidades activadas y desactivadas sin deploy, evaluadas según el contexto del usuario. Cada entorno se configura por separado, con reglas de público objetivo y rollout gradual por porcentaje; producción solo cambia con una promoción explícita."},
+    {t:"Comunicación dentro del producto", d:"Avisos y modales de mantenimiento con severidad y ventana de exhibición, tours guiados paso a paso por ruta, y un canal de sugerencias donde el cliente sigue la evolución de su propio pedido por etapas."},
+    {t:"Gobernanza multi-tenant", d:"Permisos de super-admin otorgados sección por sección, versionado inmutable de los Términos de Uso con hasta dos versiones activas simultáneamente, y claves de API emitidas por workspace o en el alcance de la organización."},
+    {t:"Observabilidad de la operación", d:"Salud de los servicios y dependencias, colas de procesamiento y errores recientes concentrados en un único panel, para diagnóstico sin depender de acceso a la infraestructura."}
+  ],
+  telas: [
+    {f:"agents-catalogo.webp", c:"Catálogo de agentes: cada agente es especialista en una tarea. El usuario elige uno para empezar o arma un equipo para encadenar varios."},
+    {f:"agents-automacoes.webp", c:"Las automatizaciones ejecutan flujos de forma recurrente y programada, con plantillas listas por canal y seguimiento de ejecuciones y crédito estimado."},
+    {f:"agents-conversa.webp", c:"La conversación es el único punto de entrada: el pedido en lenguaje natural activa al especialista y devuelve la pieza lista."},
+    {f:"agents-carrossel.webp", c:"Resultado entregado dentro del propio chat — carrusel completo, con copy, hashtags e imágenes generadas."}
+  ],
+  futuro: "La evolución del producto sigue orientada por los datos de uso real de los agentes, con foco en ampliar el catálogo de especialistas disponibles, reducir aún más el tiempo de respuesta y madurar la capa de observabilidad — hoy parcialmente instrumentada — para que la priorización deje de depender de la lectura manual y pase a sostenerse en métricas continuas."
+},
+
+"solvefy-marketing": {
+  who: "SOLVEFY · DIC 2024 — ACTUALIDAD · PRODUCT MANAGER",
+  titulo: "Solvefy Marketing",
+  lead: "Turnaround de margen llevado adelante sin perder la base: de envíos puntuales a jornadas multicanal recurrentes, orquestadas con IA.",
+  destaques: [
+    {tag:"MODELO", txt:"De envíos puntuales a jornadas recurrentes"},
+    {tag:"CANALES", txt:"WhatsApp, SMS, RCS, email y voz orquestados"},
+    {tag:"SATISFACCIÓN", txt:"NPS por encima de la meta durante la transición"},
+    {tag:"RETENCIÓN", txt:"Churn bajo control en el cambio de modelo de negocio"}
+  ],
+  visaoGeral: [
+    "Solvefy Marketing es la evolución de Disparo Pro: la misma operación y el mismo equipo, bajo una marca reposicionada. El producto original vendía envíos puntuales — el cliente compraba créditos, enviaba una campaña y desaparecía hasta la próxima necesidad. Un modelo de ingresos irregular, de margen ajustado y sin previsibilidad.",
+    "El giro fue transformar el envío puntual en jornada: flujos automatizados que se activan para contactos por segmento o para toda la base consolidada, orquestando WhatsApp, SMS, RCS, email y voz de forma recurrente, con una capa de IA que lee el rendimiento de las campañas.",
+    "El riesgo central no era técnico. Era migrar una base ya formada, acostumbrada a comprar crédito y enviar, hacia un modelo de suscripción y recurrencia — sin que el cambio de marca y de lógica de cobro se leyera como una pérdida de valor."
+  ],
+  atuacao: {
+    intro: "Como Product Manager, conduje el turnaround de margen del producto, siendo responsable de él junto con Solvefy Agents. La transición tenía que ocurrir sin ruptura: cambiar el modelo de negocio, la marca y la propuesta de valor con la base activa usando el producto todo el tiempo.",
+    bullets: [
+      "Conducción del turnaround de margen, migrando el producto de envíos puntuales a jornadas multicanal orquestadas.",
+      "Diseño de las jornadas: reglas de entrada por segmento o base consolidada, versionado y publicación controlada.",
+      "Unificación de los cinco canales — WhatsApp, SMS, RCS, email y voz — bajo un flujo único de creación de campaña.",
+      "Gestión de la transición de la base durante el cambio de modelo de cobro, manteniendo el NPS por encima de la meta y el churn bajo control.",
+      "Seguimiento del rebranding de Disparo Pro a Solvefy Marketing, preservando el reconocimiento construido por la marca anterior."
+    ]
+  },
+  blocosTitulo: "DESTACADOS",
+  blocos: [
+    {t:"Jornadas orquestadas", d:"Automatizaciones que se activan para contactos de segmentos específicos o para toda la base consolidada, con borrador, historial de versiones y alerta explícita cuando la regla elegida alcanza un gran volumen."},
+    {t:"Creación de campaña por etapas", d:"Flujo guiado de canal, contenido, destinatario y confirmación. El canal se define al inicio y se bloquea en la confirmación, evitando el error más costoso de la operación: enviar por el canal equivocado."},
+    {t:"Base de contactos y segmentación", d:"Origen por segmento guardado, archivo ya importado o carga nueva, con mapeo columna por columna de la planilla y elección de qué se incluye. El envío solo comienza cuando termina el procesamiento."},
+    {t:"Lectura de rendimiento con IA", d:"Resumen inteligente del período y comparación de rendimiento por canal — entregas, CTR, conversiones y costo — para orientar dónde invertir el próximo envío."},
+    {t:"Gestión de plan y consumo", d:"Visibilidad del uso de recursos, consumo por canal y créditos excedentes, con la regla de cobro explicada en el propio panel — pieza central en la migración hacia el modelo recurrente."},
+    {t:"Transición de marca sin ruptura", d:"La comunicación asumió la continuidad en lugar de esconderla: misma operación, mismo equipo, marca nueva. La referencia a Disparo Pro se mantuvo visible durante la transición."}
+  ],
+  telas: [
+    {f:"marketing-rebrand.webp", c:"La transición de marca asumida en la puerta de entrada: Solvefy Marketing, powered by Disparo Pro — misma operación, mismo equipo, marca nueva."},
+    {f:"marketing-disparo.webp", c:"Creación de campaña por etapas. El canal se elige al inicio y se bloquea en la confirmación, evitando el error más costoso de la operación."},
+    {f:"marketing-jornada.webp", c:"Entrada de contactos en la jornada: segmentos específicos o base consolidada, con aviso explícito cuando la regla alcanza un gran volumen."},
+    {f:"marketing-performance.webp", c:"Lectura de rendimiento por canal con resumen generado por IA. Interfaz de demostración — los números mostrados son ilustrativos."}
+  ],
+  futuro: "El roadmap continúa profundizando las jornadas — más disparadores, más ramificaciones y un uso más profundo de la IA en la recomendación de la próxima acción — y consolidando la migración de la base hacia el modelo recurrente, con la regla de consumo y planes sosteniendo la previsibilidad de ingresos que el modelo anterior no entregaba."
+}
+};
+
+const CASES_BY_LANG = {
+"pt": {
 "uno-crm": {
   who: "UNO OBJECT ERP | CRM · JUN 2023 — SET 2024 · PRODUCT MANAGER",
   titulo: "Chatbot de IA Generativa",
@@ -535,11 +1034,15 @@ const CASES = {
   ],
   futuro: "O roadmap segue no adensamento das jornadas — mais gatilhos, mais ramificações e uso mais profundo da IA na recomendação da próxima ação — e na consolidação da migração da base para o modelo recorrente, com a régua de consumo e planos sustentando a previsibilidade de receita que o modelo anterior não entregava."
 }
+},
+"en": CASES_EN,
+"es": CASES_ES
 };
 
 function renderCase(id){
-  const c = CASES[id]; if(!c) return false;
-  document.getElementById('cp-who').textContent = c.who + (c.rascunho ? ' · RASCUNHO' : '');
+  const c = CASES_BY_LANG[currentLang][id]; if(!c) return false;
+  const T = UI[currentLang].cp;
+  document.getElementById('cp-who').textContent = c.who + (c.rascunho ? T.draftSuffix : '');
 
   const destaques = (c.destaques||[]).map(h=>`
     <div><b>${h.tag||''}</b><p>${h.txt}</p></div>`).join('');
@@ -556,28 +1059,28 @@ function renderCase(id){
   // Espaço para imagens: sempre renderiza. Item com `f` vira <img>; sem `f`, vira slot reservado.
   const itens = (c.telas && c.telas.length) ? c.telas : [{},{},{}];
   const telas = (c.telas === null) ? (c.notaTelas ? `
-  <div class="cpsec"><h3>TELAS E ARTEFATOS</h3><div><p>${c.notaTelas}</p>
+  <div class="cpsec"><h3>${T.telas}</h3><div><p>${c.notaTelas}</p>
   <span class="cost">${c.notaTelasObs||''}</span></div></div>` : '') : `
-  <div class="cpsec"><h3>TELAS E ARTEFATOS</h3><div>${itens.map(t=>`
+  <div class="cpsec"><h3>${T.telas}</h3><div>${itens.map(t=>`
     <figure class="shot">${t.f
       ? `<img src="${/^(data:|https?:|\.?\/)/.test(t.f) ? t.f : 'img/'+t.f}" alt="${(t.c||'').replace(/"/g,'&quot;')}" loading="lazy" style="width:100%;display:block;border:1px solid var(--line);border-radius:4px">`
-      : `<div class="ph">${t.slot||'espaço reservado'}<br><span style="opacity:.7">imagem pendente</span></div>`}
+      : `<div class="ph">${t.slot||T.slotEmpty}<br><span style="opacity:.7">${T.slotPending}</span></div>`}
     <figcaption>${t.c||'&nbsp;'}</figcaption></figure>`).join('')}</div></div>`;
 
   const futuro = c.futuro ? `
-  <div class="cpsec"><h3>VISÃO DE FUTURO</h3><div><p>${c.futuro}</p></div></div>` : '';
+  <div class="cpsec"><h3>${T.futuro}</h3><div><p>${c.futuro}</p></div></div>` : '';
 
   document.getElementById('cp-body').innerHTML = `
   <header class="cphead"><h2 id="cp-title">${c.titulo}</h2>
   <p class="cplead">${c.lead}</p></header>
   <div class="dbar">${destaques}</div>
-  <div class="cpsec"><h3>VISÃO GERAL</h3><div>${visao}</div></div>
-  <div class="cpsec"><h3>MINHA ATUAÇÃO</h3><div>${atuacaoIntro}${atuacaoBullets}</div></div>
-  <div class="cpsec"><h3>${c.blocosTitulo||'DESTAQUES'}</h3><div>${blocos}</div></div>
+  <div class="cpsec"><h3>${T.visaoGeral}</h3><div>${visao}</div></div>
+  <div class="cpsec"><h3>${T.atuacao}</h3><div>${atuacaoIntro}${atuacaoBullets}</div></div>
+  <div class="cpsec"><h3>${c.blocosTitulo||T.destaques}</h3><div>${blocos}</div></div>
   ${telas}
   ${futuro}
-  <div class="cpfoot"><span class="q">Quer conversar sobre esse case?</span>
-  <button class="cta" type="button" data-contact>Falar comigo</button></div>`;
+  <div class="cpfoot"><span class="q">${T.question}</span>
+  <button class="cta" type="button" data-contact data-i18n="nav.cta">${UI[currentLang].nav.cta}</button></div>`;
   document.querySelectorAll('#cp-body [data-contact]').forEach(b=>b.addEventListener('click',openSheet));
   return true;
 }
@@ -604,6 +1107,32 @@ function routeFromHash(){
 }
 window.addEventListener('popstate', routeFromHash);
 routeFromHash();
+
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang==='pt' ? 'pt-BR' : lang;
+  try{ localStorage.setItem('lang', lang); }catch(e){}
+  document.querySelectorAll('.langsw button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true':'false'));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const v = getPath(UI[lang], el.getAttribute('data-i18n'));
+    if(v!=null) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const v = getPath(UI[lang], el.getAttribute('data-i18n-html'));
+    if(v!=null) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const v = getPath(UI[lang], el.getAttribute('data-i18n-ph'));
+    if(v!=null) el.placeholder = v;
+  });
+  document.title = UI[lang].meta.title;
+  const md = document.querySelector('meta[name="description"]');
+  if(md) md.setAttribute('content', UI[lang].meta.description);
+  const m = location.hash.match(/^#case\/(.+)$/);
+  if(m && panel.classList.contains('open')) renderCase(m[1]);
+}
+document.querySelectorAll('.langsw button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+applyLang(currentLang);
 </script>
 
 </body></html>
