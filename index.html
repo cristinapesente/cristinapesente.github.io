@@ -72,6 +72,10 @@ animation:reveal .46s cubic-bezier(.16,.84,.32,1) var(--d) forwards}
 .sec{padding-top:clamp(74px,11vh,150px)}
 h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,3.6vw,3.2rem);letter-spacing:-.03em;color:var(--ink)}
 .seclead{font-size:clamp(15px,1.2vw,17px);color:var(--muted);margin-top:12px;max-width:62ch;line-height:1.6}
+.resumo-body{margin-top:20px}
+.resumo-body p{font-size:clamp(15px,1.15vw,17px);color:var(--text);line-height:1.7;margin-top:16px;break-inside:avoid}
+.resumo-body p:first-child{margin-top:0}
+@media(min-width:860px){.resumo-body{column-count:2;column-gap:clamp(32px,4vw,64px)}}
 
 .cases{margin-top:clamp(28px,4vh,50px);border-top:1px solid var(--line)}
 .case{display:block;text-decoration:none;color:inherit;padding:clamp(34px,5vh,62px) 0;
@@ -86,6 +90,8 @@ transition:opacity .7s ease,transform .7s cubic-bezier(.16,.84,.32,1),padding-le
 letter-spacing:-.028em;margin-top:12px;display:inline-block;
 box-shadow:inset 0 -1px 0 rgba(11,11,12,0);transition:box-shadow .3s ease}
 .case:hover h3{box-shadow:inset 0 -1px 0 rgba(11,11,12,.75)}
+.casearrow{display:inline-block;color:var(--muted);transition:transform .3s cubic-bezier(.16,.84,.32,1),color .3s ease}
+.case:hover .casearrow{transform:translateX(6px);color:var(--ink)}
 .caseline{font-size:clamp(15px,1.2vw,17px);color:var(--text);margin-top:10px;line-height:1.6;max-width:62ch}
 .case.right .caseline{margin-left:auto}
 
@@ -156,6 +162,7 @@ background:transparent;border:0;border-radius:3px;padding:5px 8px;cursor:pointer
 @media(max-width:520px){.nav-hide{display:none} .m{text-align:left} .sheet{right:10px;left:10px;width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 .sk{animation:none;opacity:1;transform:none} .case{transition:none;opacity:1;transform:none}
+.metodobar div,.metodobase{transition:none;opacity:1;transform:none}
 .chk path{animation:none;stroke-dashoffset:0}}
 @media print{.topbar,.backdrop,.sheet,.photo,footer{display:none} body{background:#fff} .job,.row{break-inside:avoid}}
 
@@ -182,6 +189,19 @@ margin-bottom:clamp(40px,6vh,80px)}
 .dbar b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted);font-weight:400}
 .dbar p{font-size:15px;line-height:1.5;margin-top:9px;color:var(--text)}
 .dbar .off p{color:var(--muted)}
+.metodobar{margin-top:28px;margin-bottom:0;border-radius:4px 4px 0 0}
+.metodobase{border:1px solid var(--ink);border-top:0;border-radius:0 0 4px 4px;background:var(--ink);
+padding:20px 24px;margin-bottom:clamp(40px,6vh,80px)}
+.metodobase b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--paper);opacity:.75;font-weight:400}
+.metodobase p{font-size:15px;line-height:1.5;margin-top:9px;color:var(--paper);max-width:80ch}
+.metodobar div{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.16,.84,.32,1)}
+.metodobar.in div{opacity:1;transform:none}
+.metodobar div:nth-child(1){transition-delay:0s}
+.metodobar div:nth-child(2){transition-delay:.08s}
+.metodobar div:nth-child(3){transition-delay:.16s}
+.metodobar div:nth-child(4){transition-delay:.24s}
+.metodobase{opacity:0;transform:translateY(16px);transition:opacity .6s ease .32s,transform .6s cubic-bezier(.16,.84,.32,1) .32s}
+.metodobase.in{opacity:1;transform:none}
 .cpsec{border-top:1px solid var(--line);padding-top:clamp(26px,3.6vh,44px);padding-bottom:clamp(34px,5vh,64px);
 display:grid;grid-template-columns:minmax(180px,21%) minmax(0,1fr);gap:clamp(16px,3vw,54px)}
 .cpsec h3{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);font-weight:400;padding-top:5px}
@@ -249,15 +269,37 @@ letter-spacing:-.025em;margin-right:auto}
 
 <div class="wrap"><div class="proof"><div class="m"><div class="mv"><span class="dim"></span><span data-i18n="proof.v1">3 produtos</span></div><div class="ml" data-i18n="proof.l1">End-to-end da ideação a retenção</div></div><div class="m"><div class="mv"><span class="dim"></span>35%</div><div class="ml" data-i18n="proof.l2">Na redução dos custos com Product Ops</div></div><div class="m"><div class="mv"><span class="dim"></span>+30%</div><div class="ml" data-i18n="proof.l3">Aprovação da plataforma</div></div><div class="m"><div class="mv"><span class="dim"></span>600+</div><div class="ml" data-i18n="proof.l4">Clientes ativos no 1º ano</div></div><div class="m"><div class="mv"><span class="dim"></span>+15%</div><div class="ml" data-i18n="proof.l5">Na precisão das respostas dos agentes de IA</div></div></div></div>
 
+<section class="wrap sec" id="resumo"><h2 data-i18n="resumo.h2">Resumo Profissional</h2>
+<div class="resumo-body">
+<p data-i18n="resumo.p0">Product Manager especializada em soluções SaaS B2B. Ao longo da minha trajetória, atuei na interseção entre negócio, tecnologia e design, liderando times multidisciplinares e produtos estratégicos em contextos de crescimento e transformação.</p>
+<p data-i18n="resumo.p1">Minha atuação é orientada a impacto, com foco em resolver problemas reais dos clientes, alinhar stakeholders e transformar estratégia em execução consistente. Além disso, possuo um background técnico que me permite integrar IA generativa e LLMs às soluções, atuando como uma ponte estratégica entre as equipes de negócios e engenharia para acelerar as entregas e reduzir débitos técnicos.</p>
+<p data-i18n="resumo.p2">Gerencio todo o ciclo de vida do produto, desde o Discovery até a implementação de estratégias de Product Led Growth (PLG), sempre com o objetivo de criar soluções digitais escaláveis que unam viabilidade técnica, usabilidade e valor real.</p>
+</div>
+</section>
+
+<section class="wrap sec" id="metodo"><h2 data-i18n="metodo.h2">Como eu trabalho</h2>
+<p class="seclead" data-i18n="metodo.lead">Um ciclo contínuo de descoberta, validação, construção e mensuração — sustentado, do primeiro ao último passo, pela gestão próxima dos stakeholders.</p>
+<div class="dbar metodobar">
+<div><b data-i18n="metodo.steps.0.tag">PASSO 01 · INVESTIGAÇÃO DA DOR</b><p data-i18n="metodo.steps.0.txt">Compreender profundamente o obstáculo real antes de começar a idealizar qualquer resolução.</p></div>
+<div><b data-i18n="metodo.steps.1.tag">PASSO 02 · SUPOSIÇÕES E TESTES</b><p data-i18n="metodo.steps.1.txt">Criar teorias sobre o produto e validá-las diretamente com o público-alvo, utilizando informações concretas.</p></div>
+<div><b data-i18n="metodo.steps.2.tag">PASSO 03 · DESENVOLVIMENTO ÁGIL</b><p data-i18n="metodo.steps.2.txt">Construir a solução em ciclos contínuos, garantindo que cada etapa entregue benefícios reais e práticos.</p></div>
+<div><b data-i18n="metodo.steps.3.tag">PASSO 04 · AVALIAÇÃO DE RESULTADOS</b><p data-i18n="metodo.steps.3.txt">Acompanhar os indicadores de sucesso da solução e fazer refinamentos constantes com base no desempenho.</p></div>
+</div>
+<div class="metodobase">
+<b data-i18n="metodo.base.tag">BASE CONTÍNUA · GESTÃO COM STAKEHOLDERS</b>
+<p data-i18n="metodo.base.txt">Manter o diálogo aberto para alinhar o que se espera e focar em metas conjuntas. Todas as escolhas são guiadas por dados e por uma avaliação transparente dos prós e contras.</p>
+</div>
+</section>
+
 <section class="wrap sec" id="cases"><h2 data-i18n="cases.h2">Cases</h2>
 <div class="cases"><a class="case left" href="#case/solvefy-agents" data-case="solvefy-agents">
-<span class="eyebrow" data-i18n="cases.items.0.eyebrow">2026 · PLATAFORMA MULTIAGENTE</span><h3>Solvefy Agents</h3>
+<span class="eyebrow" data-i18n="cases.items.0.eyebrow">2026 · PLATAFORMA MULTIAGENTE</span><h3>Solvefy Agents <span class="casearrow" aria-hidden="true">→</span></h3>
 </a><a class="case right" href="#case/solvefy-marketing" data-case="solvefy-marketing">
-<span class="eyebrow" data-i18n="cases.items.1.eyebrow">2025 · ORQUESTRAÇÃO MULTICANAL</span><h3>Solvefy Marketing</h3>
+<span class="eyebrow" data-i18n="cases.items.1.eyebrow">2025 · ORQUESTRAÇÃO MULTICANAL</span><h3>Solvefy Marketing <span class="casearrow" aria-hidden="true">→</span></h3>
 </a><a class="case left" href="#case/erp-corporativo" data-case="erp-corporativo">
-<span class="eyebrow" data-i18n="cases.items.2.eyebrow">2025 · PRODUTO INTERNO</span><h3>ERP Corporativo</h3>
+<span class="eyebrow" data-i18n="cases.items.2.eyebrow">2025 · PRODUTO INTERNO</span><h3>ERP Corporativo <span class="casearrow" aria-hidden="true">→</span></h3>
 </a><a class="case right" href="#case/uno-crm" data-case="uno-crm">
-<span class="eyebrow" data-i18n="cases.items.3.eyebrow">2024 · CHATBOT DE IA GENERATIVA</span><h3>Uno CRM</h3>
+<span class="eyebrow" data-i18n="cases.items.3.eyebrow">2024 · CHATBOT DE IA GENERATIVA</span><h3>Uno CRM <span class="casearrow" aria-hidden="true">→</span></h3>
 </a></div></section>
 
 <div class="wrap"><footer>
@@ -333,7 +375,7 @@ if(!CONTATO_URL){
   }finally{ btn.disabled=false; btn.textContent=label; }
 });
 
-const cases=document.querySelectorAll('.case');
+const cases=document.querySelectorAll('.case, .metodobar, .metodobase');
 function revealVisible(){cases.forEach(el=>{const r=el.getBoundingClientRect();
   if(r.top<window.innerHeight*0.92&&r.bottom>0)el.classList.add('in');});}
 if('IntersectionObserver' in window){
@@ -416,6 +458,18 @@ pt: {
   nav:{ cases:"Cases", trajetoria:"Minha trajetória", cta:"Falar comigo" },
   hero:{ l1:"Oi, sou a Cristina.", l2:"Na interseção de business, tech, ux e IA,", l3:"Product Manager" },
   proof:{ v1:"3 produtos", l1:"End-to-end da ideação a retenção", l2:"Na redução dos custos com Product Ops", l3:"Aprovação da plataforma", l4:"Clientes ativos no 1º ano", l5:"Na precisão das respostas dos agentes de IA" },
+  resumo:{ h2:"Resumo Profissional",
+    p0:"Product Manager especializada em soluções SaaS B2B. Ao longo da minha trajetória, atuei na interseção entre negócio, tecnologia e design, liderando times multidisciplinares e produtos estratégicos em contextos de crescimento e transformação.",
+    p1:"Minha atuação é orientada a impacto, com foco em resolver problemas reais dos clientes, alinhar stakeholders e transformar estratégia em execução consistente. Além disso, possuo um background técnico que me permite integrar IA generativa e LLMs às soluções, atuando como uma ponte estratégica entre as equipes de negócios e engenharia para acelerar as entregas e reduzir débitos técnicos.",
+    p2:"Gerencio todo o ciclo de vida do produto, desde o Discovery até a implementação de estratégias de Product Led Growth (PLG), sempre com o objetivo de criar soluções digitais escaláveis que unam viabilidade técnica, usabilidade e valor real." },
+  metodo:{ h2:"Como eu trabalho", lead:"Um ciclo contínuo de descoberta, validação, construção e mensuração — sustentado, do primeiro ao último passo, pela gestão próxima dos stakeholders.",
+    steps:[
+      {tag:"PASSO 01 · INVESTIGAÇÃO DA DOR", txt:"Compreender profundamente o obstáculo real antes de começar a idealizar qualquer resolução."},
+      {tag:"PASSO 02 · SUPOSIÇÕES E TESTES", txt:"Criar teorias sobre o produto e validá-las diretamente com o público-alvo, utilizando informações concretas."},
+      {tag:"PASSO 03 · DESENVOLVIMENTO ÁGIL", txt:"Construir a solução em ciclos contínuos, garantindo que cada etapa entregue benefícios reais e práticos."},
+      {tag:"PASSO 04 · AVALIAÇÃO DE RESULTADOS", txt:"Acompanhar os indicadores de sucesso da solução e fazer refinamentos constantes com base no desempenho."}
+    ],
+    base:{ tag:"BASE CONTÍNUA · GESTÃO COM STAKEHOLDERS", txt:"Manter o diálogo aberto para alinhar o que se espera e focar em metas conjuntas. Todas as escolhas são guiadas por dados e por uma avaliação transparente dos prós e contras." } },
   cases:{ h2:"Cases", items:[
     {eyebrow:"2026 · PLATAFORMA MULTIAGENTE"},
     {eyebrow:"2025 · ORQUESTRAÇÃO MULTICANAL"},
@@ -463,6 +517,18 @@ en: {
   nav:{ cases:"Cases", trajetoria:"Experience", cta:"Get in touch" },
   hero:{ l1:"Hi, I'm Cristina.", l2:"At the intersection of business, tech, UX, and AI,", l3:"Product Manager" },
   proof:{ v1:"3 products", l1:"End-to-end, from ideation to retention", l2:"Reduction in operating costs with Product Ops", l3:"Platform approval rating", l4:"Active clients in year one", l5:"In the accuracy of AI agent responses" },
+  resumo:{ h2:"Professional Summary",
+    p0:"Product Manager specialized in B2B SaaS solutions. Throughout my career, I've worked at the intersection of business, technology, and design, leading multidisciplinary teams and strategic products in contexts of growth and transformation.",
+    p1:"My work is impact-driven, focused on solving customers' real problems, aligning stakeholders, and turning strategy into consistent execution. I also have a technical background that lets me integrate generative AI and LLMs into products, acting as a strategic bridge between business and engineering teams to speed up delivery and reduce technical debt.",
+    p2:"I manage the full product lifecycle, from Discovery through the implementation of Product-Led Growth (PLG) strategies, always aiming to build scalable digital solutions that combine technical feasibility, usability, and real value." },
+  metodo:{ h2:"How I work", lead:"A continuous cycle of discovery, validation, building, and measurement — underpinned, from the first to the last step, by close stakeholder management.",
+    steps:[
+      {tag:"STEP 01 · PAIN DISCOVERY", txt:"Deeply understand the real obstacle before starting to design any solution."},
+      {tag:"STEP 02 · HYPOTHESES & TESTING", txt:"Form theories about the product and validate them directly with the target audience, using concrete data."},
+      {tag:"STEP 03 · AGILE DEVELOPMENT", txt:"Build the solution in continuous cycles, making sure every step delivers real, practical benefits."},
+      {tag:"STEP 04 · RESULTS ASSESSMENT", txt:"Track the solution's success metrics and make ongoing refinements based on performance."}
+    ],
+    base:{ tag:"CONTINUOUS FOUNDATION · STAKEHOLDER MANAGEMENT", txt:"Keep an open dialogue to align expectations and focus on shared goals. Every choice is guided by data and a transparent assessment of trade-offs." } },
   cases:{ h2:"Cases", items:[
     {eyebrow:"2026 · MULTI-AGENT PLATFORM"},
     {eyebrow:"2025 · MULTICHANNEL ORCHESTRATION"},
@@ -510,6 +576,18 @@ es: {
   nav:{ cases:"Cases", trajetoria:"Mi trayectoria", cta:"Hablemos" },
   hero:{ l1:"Hola, soy Cristina.", l2:"En la intersección de negocio, tecnología, UX e IA,", l3:"Product Manager" },
   proof:{ v1:"3 productos", l1:"End-to-end, de la ideación a la retención", l2:"En la reducción de costos con Product Ops", l3:"Aprobación de la plataforma", l4:"Clientes activos en el 1er año", l5:"En la precisión de las respuestas de los agentes de IA" },
+  resumo:{ h2:"Resumen Profesional",
+    p0:"Product Manager especializada en soluciones SaaS B2B. A lo largo de mi trayectoria, trabajé en la intersección entre negocio, tecnología y diseño, liderando equipos multidisciplinarios y productos estratégicos en contextos de crecimiento y transformación.",
+    p1:"Mi actuación está orientada a impacto, con foco en resolver problemas reales de los clientes, alinear stakeholders y transformar estrategia en ejecución consistente. Además, cuento con un background técnico que me permite integrar IA generativa y LLMs a las soluciones, actuando como un puente estratégico entre los equipos de negocio e ingeniería para acelerar las entregas y reducir deuda técnica.",
+    p2:"Gestiono todo el ciclo de vida del producto, desde el Discovery hasta la implementación de estrategias de Product Led Growth (PLG), siempre con el objetivo de crear soluciones digitales escalables que unan viabilidad técnica, usabilidad y valor real." },
+  metodo:{ h2:"Cómo trabajo", lead:"Un ciclo continuo de descubrimiento, validación, construcción y medición — sostenido, del primer al último paso, por una gestión cercana de los stakeholders.",
+    steps:[
+      {tag:"PASO 01 · INVESTIGACIÓN DEL DOLOR", txt:"Comprender profundamente el obstáculo real antes de empezar a idear cualquier solución."},
+      {tag:"PASO 02 · SUPUESTOS Y PRUEBAS", txt:"Crear teorías sobre el producto y validarlas directamente con el público objetivo, utilizando datos concretos."},
+      {tag:"PASO 03 · DESARROLLO ÁGIL", txt:"Construir la solución en ciclos continuos, asegurando que cada etapa entregue beneficios reales y prácticos."},
+      {tag:"PASO 04 · EVALUACIÓN DE RESULTADOS", txt:"Monitorear los indicadores de éxito de la solución y realizar ajustes constantes según el desempeño."}
+    ],
+    base:{ tag:"BASE CONTINUA · GESTIÓN CON STAKEHOLDERS", txt:"Mantener el diálogo abierto para alinear expectativas y enfocarse en metas conjuntas. Todas las decisiones se guían por datos y por una evaluación transparente de los pros y contras." } },
   cases:{ h2:"Cases", items:[
     {eyebrow:"2026 · PLATAFORMA MULTIAGENTE"},
     {eyebrow:"2025 · ORQUESTACIÓN MULTICANAL"},
