@@ -45,7 +45,7 @@ font-family:inherit;font-size:clamp(12.5px,.95vw,14.5px);cursor:pointer}
 
 .hero{position:relative;display:flex;flex-direction:column;overflow:hidden;min-height:clamp(400px,60svh,680px)}
 .photo{position:absolute;top:0;bottom:0;right:0;left:var(--photo-left);
-background-image:url('img/hero.jpg');background-size:cover;background-position:52% 22%}
+background-image:url('img/hero.jpg');background-size:cover;background-position:52% 40%}
 .herotext{position:relative;z-index:2;margin-top:auto;margin-bottom:auto;margin-left:var(--indent);
 padding-block:clamp(48px,8vh,110px);
 width:min(calc(var(--photo-left) - var(--gutter) - var(--indent) - 3vw),920px);min-width:260px}
@@ -756,10 +756,10 @@ const CASES_EN = {
   titulo: "Solvefy Marketing",
   lead: "A margin turnaround carried out without losing the customer base: from one-off blasts to recurring, AI-orchestrated multichannel journeys.",
   destaques: [
-    {tag:"MODEL", txt:"From one-off blasts to recurring journeys"},
-    {tag:"CHANNELS", txt:"WhatsApp, SMS, RCS, email, and voice orchestrated"},
-    {tag:"SATISFACTION", txt:"NPS above target throughout the transition"},
-    {tag:"RETENTION", txt:"Churn kept under control through the business-model change"}
+    {tag:"BUSINESS MODEL", txt:"Transition from one-off blasts to SaaS."},
+    {tag:"MRR FOCUS", txt:"Churn -3%"},
+    {tag:"PRODUCT ADOPTION", txt:"+35% engagement"},
+    {tag:"ANNUAL RETENTION", txt:"+20% retention, securing the new customer base for the next 5 years."}
   ],
   visaoGeral: [
     "Solvefy Marketing is the evolution of Disparo Pro: the same operation and the same team, under a repositioned brand. The original product sold one-off blasts — customers bought credits, ran a campaign, and disappeared until the next need arose. A revenue model that was erratic, thin-margin, and unpredictable.",
@@ -767,12 +767,12 @@ const CASES_EN = {
     "The central risk wasn't technical. It was migrating an already-established base, used to buying credit and firing off a blast, to a subscription and recurrence model — without the brand and billing-logic change being read as a loss of value."
   ],
   atuacao: {
-    intro: "As Product Manager, I led the product's margin turnaround, owning it alongside Solvefy Agents. The transition had to happen without rupture: changing the business model, the brand, and the value proposition while the active base kept using the product the whole time.",
+    intro: "As Product Manager, I led the product's margin turnaround. The transition had to happen without rupture: changing the business model, the brand, and the value proposition while the active base kept using the product the whole time.",
     bullets: [
       "Led the margin turnaround, migrating the product from one-off blasts to orchestrated multichannel journeys.",
       "Designed the journeys: entry rules by segment or consolidated base, versioning, and controlled publishing.",
-      "Unified the five channels — WhatsApp, SMS, RCS, email, and voice — under a single campaign-creation flow.",
-      "Managed the base's transition through the billing-model change, keeping NPS above target and churn under control.",
+      "Unified the five channels, adding email marketing to WhatsApp, SMS, RCS, and voice — under a single campaign-creation flow.",
+      "Managed the base's transition through the billing-model change, keeping NPS above target and churn under control, below 1.5%.",
       "Oversaw the rebrand from Disparo Pro to Solvefy Marketing, preserving the recognition the previous brand had built."
     ]
   },
@@ -923,10 +923,10 @@ const CASES_ES = {
   titulo: "Solvefy Marketing",
   lead: "Turnaround de margen llevado adelante sin perder la base: de envíos puntuales a jornadas multicanal recurrentes, orquestadas con IA.",
   destaques: [
-    {tag:"MODELO", txt:"De envíos puntuales a jornadas recurrentes"},
-    {tag:"CANALES", txt:"WhatsApp, SMS, RCS, email y voz orquestados"},
-    {tag:"SATISFACCIÓN", txt:"NPS por encima de la meta durante la transición"},
-    {tag:"RETENCIÓN", txt:"Churn bajo control en el cambio de modelo de negocio"}
+    {tag:"MODELO DE NEGOCIO", txt:"Transición de envíos puntuales a SaaS."},
+    {tag:"FOCO EN MRR", txt:"Churn -3%"},
+    {tag:"ADOPCIÓN DEL PRODUCTO", txt:"+35% de engagement"},
+    {tag:"RETENCIÓN ANUAL", txt:"+20% de retención, blindando la nueva cartera para los próximos 5 años."}
   ],
   visaoGeral: [
     "Solvefy Marketing es la evolución de Disparo Pro: la misma operación y el mismo equipo, bajo una marca reposicionada. El producto original vendía envíos puntuales — el cliente compraba créditos, enviaba una campaña y desaparecía hasta la próxima necesidad. Un modelo de ingresos irregular, de margen ajustado y sin previsibilidad.",
@@ -934,12 +934,12 @@ const CASES_ES = {
     "El riesgo central no era técnico. Era migrar una base ya formada, acostumbrada a comprar crédito y enviar, hacia un modelo de suscripción y recurrencia — sin que el cambio de marca y de lógica de cobro se leyera como una pérdida de valor."
   ],
   atuacao: {
-    intro: "Como Product Manager, conduje el turnaround de margen del producto, siendo responsable de él junto con Solvefy Agents. La transición tenía que ocurrir sin ruptura: cambiar el modelo de negocio, la marca y la propuesta de valor con la base activa usando el producto todo el tiempo.",
+    intro: "Como Product Manager, conduje el turnaround de margen del producto. La transición tenía que ocurrir sin ruptura: cambiar el modelo de negocio, la marca y la propuesta de valor con la base activa usando el producto todo el tiempo.",
     bullets: [
       "Conducción del turnaround de margen, migrando el producto de envíos puntuales a jornadas multicanal orquestadas.",
       "Diseño de las jornadas: reglas de entrada por segmento o base consolidada, versionado y publicación controlada.",
-      "Unificación de los cinco canales — WhatsApp, SMS, RCS, email y voz — bajo un flujo único de creación de campaña.",
-      "Gestión de la transición de la base durante el cambio de modelo de cobro, manteniendo el NPS por encima de la meta y el churn bajo control.",
+      "Unificación de los cinco canales, incorporando el email marketing a WhatsApp, SMS, RCS y voz — bajo un flujo único de creación de campaña.",
+      "Gestión de la transición de la base durante el cambio de modelo de cobro, manteniendo el NPS por encima de la meta y el churn bajo control, por debajo del 1,5%.",
       "Seguimiento del rebranding de Disparo Pro a Solvefy Marketing, preservando el reconocimiento construido por la marca anterior."
     ]
   },
@@ -1092,10 +1092,10 @@ const CASES_BY_LANG = {
   titulo: "Solvefy Marketing",
   lead: "Turnaround de margem conduzido sem perder a base: de disparo avulso a jornadas multicanal recorrentes, orquestradas com IA.",
   destaques: [
-    {tag:"MODELO", txt:"De disparo avulso a jornadas recorrentes"},
-    {tag:"CANAIS", txt:"WhatsApp, SMS, RCS, e-mail e voz orquestrados"},
-    {tag:"SATISFAÇÃO", txt:"NPS acima da meta durante a transição"},
-    {tag:"RETENÇÃO", txt:"Churn sob controle na mudança de modelo de negócio"}
+    {tag:"MODELO DE NEGÓCIO", txt:"Transição de disparo avulso para SaaS."},
+    {tag:"FOCO EM MRR", txt:"Churn -3%"},
+    {tag:"ADOÇÃO DO PRODUTO", txt:"+35% de engajamento"},
+    {tag:"RETENÇÃO ANUAL", txt:"+20% de retenção, blindando a nova carteira para os próximos 5 anos."}
   ],
   visaoGeral: [
     "O Solvefy Marketing é a evolução da Disparo Pro: a mesma operação e o mesmo time, sob uma marca reposicionada. O produto original vendia disparo avulso — o cliente comprava créditos, mandava uma campanha e sumia até a próxima necessidade. Um modelo de receita irregular, de margem apertada e sem previsibilidade.",
@@ -1103,12 +1103,12 @@ const CASES_BY_LANG = {
     "O risco central não era técnico. Era migrar uma base já formada, acostumada a comprar crédito e disparar, para um modelo de assinatura e recorrência — sem que a mudança de marca e de lógica de cobrança fosse lida como perda de valor."
   ],
   atuacao: {
-    intro: "Como Product Manager, conduzi o turnaround de margem do produto, respondendo por ele junto com o Solvefy Agents. A transição precisava acontecer sem ruptura: mudar o modelo de negócio, a marca e a proposta de valor com a base ativa dentro do produto o tempo todo.",
+    intro: "Como Product Manager, conduzi o turnaround de margem do produto. A transição precisava acontecer sem ruptura: mudar o modelo de negócio, a marca e a proposta de valor com a base ativa dentro do produto o tempo todo.",
     bullets: [
       "Condução do turnaround de margem, migrando o produto de disparo avulso para jornadas multicanal orquestradas.",
       "Desenho das jornadas: regras de entrada por segmento ou base consolidada, versionamento e publicação controlada.",
-      "Unificação dos cinco canais — WhatsApp, SMS, RCS, e-mail e voz — sob um fluxo único de criação de campanha.",
-      "Gestão da transição da base durante a mudança de modelo de cobrança, mantendo o NPS acima da meta e o churn sob controle.",
+      "Unificação dos cinco canais, adicionando o E-mail marketing ao WhatsApp, SMS, RCS e voz — sob um fluxo único de criação de campanha.",
+      "Gestão da transição da base durante a mudança de modelo de cobrança, mantendo o NPS acima da meta e o churn abaixo de 1,5% sob controle.",
       "Acompanhamento do rebranding de Disparo Pro para Solvefy Marketing, preservando o reconhecimento construído pela marca anterior."
     ]
   },
