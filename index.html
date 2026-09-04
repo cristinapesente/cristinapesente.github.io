@@ -63,8 +63,8 @@ animation:reveal .46s cubic-bezier(.16,.84,.32,1) var(--d) forwards}
 .chk path{stroke-dasharray:32;stroke-dashoffset:32;animation:chkdraw .5s cubic-bezier(.65,0,.35,1) .9s forwards}
 @keyframes chkdraw{to{stroke-dashoffset:0}}
 
-.proof{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(20px,2vw,40px);padding-top:clamp(44px,6vh,72px)}
-.m{text-align:center}
+.proof{display:flex;flex-wrap:nowrap;justify-content:space-between;gap:clamp(20px,2vw,40px);padding-top:clamp(44px,6vh,72px)}
+.m{text-align:center;flex:0 0 auto}
 .mv{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,2.2vw,2.2rem);letter-spacing:-.025em;color:var(--ink)}
 .ml{font-size:clamp(12.5px,.95vw,14px);color:var(--text);margin-top:8px;line-height:1.45}
 .dim{color:var(--muted)}
@@ -136,7 +136,8 @@ font-family:var(--body);font-size:15px;cursor:pointer}
 
 @media(max-width:1400px){:root{--photo-left:50%}}
 @media(max-width:1080px){:root{--photo-left:55%} .l3{font-size:clamp(2rem,5.6vw,3.4rem)}
-.proof{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(26px,4vw,44px)}}
+.proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(26px,4vw,44px)}
+.m{flex:none}}
 @media(max-width:820px){
 .hero{min-height:auto}
 .photo{position:relative;inset:auto;left:auto;width:100%;height:clamp(280px,44svh,420px);
