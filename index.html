@@ -718,17 +718,18 @@ const CASES_EN = {
     {tag:"SCOPE", txt:"End-to-end, from ideation to launch"}
   ],
   visaoGeral: [
-    "Solvefy Agents is a multi-agent AI platform built for content production and marketing operations at client companies. Instead of exposing users to a collection of standalone tools, the product offers a single point of conversation: an orchestrator agent that reads the request and calls in the right specialist — a LinkedIn post, an Instagram carousel, an article, a Reels script — and hands back the finished result.",
-    "The platform is multi-tenant and comes with its own admin panel, covering tenant management, an agent and team catalog, billing and plan control, in-app communication, AI model governance, and service observability.",
-    "The MVP was built under an unusual constraint: the trade-show date was already locked in. The deadline was fixed and the scope was open — which flipped the usual prioritization logic and turned every product decision into a decision about what wouldn't make the cut."
+    "Solvefy Agents is a multi-agent AI platform built for content production and marketing operations at client companies. Instead of exposing users to a collection of standalone tools, the product offers a single point of conversation: an orchestrator agent that reads the request, calls in the right specialist, and hands back the finished result.",
+    "The MVP was built under a constraint: the trade-show date was already locked in. The deadline was fixed and the scope was open — every product decision became a decision about what wouldn't make the cut."
   ],
   atuacao: {
-    intro: "As Product Manager, I led the product from zero to launch and remain responsible for its lifecycle, acting as the interface between business and engineering. The goal was to arrive at the trade show with something demonstrable and sellable, without compromising the technical foundation the next stage of the product would need.",
+    intro: "As Product Manager, I led the product from scratch, acting as the interface between business and engineering. My priority was to drive a delivery that was demonstrable and sellable, without compromising the technical foundation the next stage would need.",
     bullets: [
-      "Scoped the MVP under a fixed deadline: cut the feature set back from the trade-show date, deciding what shipped and what waited.",
+      "Designed the agent architecture to unlock usage: an orchestrator agent called on skills — the \"specialist agents\" — with a configuration model defined by <em>system prompt</em>, provider, model, and temperature.",
       "Ran continuous discovery and usage-data-driven prioritization, which underpinned the drop in agent response time from 12.0s to 9.56s and a 15% increase in response accuracy.",
-      "Designed the agent architecture — orchestrator and specialists — and the configuration model by <em>system prompt</em>, provider, model, and temperature.",
-      "Structured the admin panel: per-task model governance, environment feature flags, and granular super-admin permissions.",
+      "Structured the admin panel: continuous status for latency, efficiency, <em>eval</em>, and <em>deflection</em>.",
+      "Implemented environment feature flags for phased rollout and granular user permissions.",
+      "Made the product sellable from the MVP itself, with a payment gateway integration.",
+      "Priced the product with cost analysis, benchmarks, A/B testing, and usage testing with internal teams.",
       "Generated initial traction at the trade show, validating product-market fit and converting interest into paying customers.",
       "Acted as the strategic interface between business and engineering to reduce technical debt and speed up the following deliveries."
     ]
@@ -748,7 +749,7 @@ const CASES_EN = {
     {f:"agents-conversa.webp", c:"The conversation is the only entry point: a natural-language request calls in the specialist and returns a finished asset."},
     {f:"agents-carrossel.webp", c:"Result delivered right inside the chat — a full carousel, with copy, hashtags, and generated images."}
   ],
-  futuro: "The product's evolution keeps following real agent usage data, focused on expanding the catalog of available specialists, further reducing response time, and maturing the observability layer — today only partially instrumented — so prioritization stops relying on manual reading and is instead sustained by continuous metrics."
+  futuro: "The product's evolution keeps following real agent usage data, focused on expanding the catalog of available specialists, adding more output possibilities, extending the proposed integrations, maturing the observability layer, and evolving flow automation."
 },
 
 "solvefy-marketing": {
@@ -762,18 +763,20 @@ const CASES_EN = {
     {tag:"ANNUAL RETENTION", txt:"+20% retention, securing the new customer base for the next 5 years."}
   ],
   visaoGeral: [
-    "Solvefy Marketing is the evolution of Disparo Pro: the same operation and the same team, under a repositioned brand. The original product sold one-off blasts — customers bought credits, ran a campaign, and disappeared until the next need arose. A revenue model that was erratic, thin-margin, and unpredictable.",
-    "The turnaround was to reframe blasts as journeys: automated flows that trigger for contacts by segment or across the consolidated base, orchestrating WhatsApp, SMS, RCS, email, and voice on a recurring basis, with an AI layer reading campaign performance.",
-    "The central risk wasn't technical. It was migrating an already-established base, used to buying credit and firing off a blast, to a subscription and recurrence model — without the brand and billing-logic change being read as a loss of value."
+    "Solvefy Marketing is the evolution of Disparo Pro under a repositioned brand. The original product sold one-off blasts on a prepaid model, with the customer base shrinking 60%, margin dropping 20%, and no financial predictability (MRR)."
   ],
   atuacao: {
-    intro: "As Product Manager, I led the product's margin turnaround. The transition had to happen without rupture: changing the business model, the brand, and the value proposition while the active base kept using the product the whole time.",
+    intro: "As Product Manager, I led the product's margin turnaround. My strategy was to add a relationship-building layer inside the product, in a B2B2C format, implementing journeys and clarity on base and ROI data.",
     bullets: [
-      "Led the margin turnaround, migrating the product from one-off blasts to orchestrated multichannel journeys.",
-      "Designed the journeys: entry rules by segment or consolidated base, versioning, and controlled publishing.",
-      "Unified the five channels, adding email marketing to WhatsApp, SMS, RCS, and voice — under a single campaign-creation flow.",
-      "Managed the base's transition through the billing-model change, keeping NPS above target and churn under control, below 1.5%.",
-      "Oversaw the rebrand from Disparo Pro to Solvefy Marketing, preserving the recognition the previous brand had built."
+      "Led the margin turnaround, migrating the product from one-off blasts to orchestrated multichannel journeys and AI-driven data intelligence.",
+      "Designed the journeys with entry rules by segment or consolidated base, versioning, and controlled publishing.",
+      "Unified the five channels, adding email marketing to WhatsApp, SMS, RCS, and voice.",
+      "Built an upsell strategy tied to supplied and generated data, to guide where the next send should invest.",
+      "Managed the base's transition through the billing-model change, keeping NPS above target and churn below 3%.",
+      "Oversaw the rebrand from Disparo Pro to Solvefy Marketing, preserving the recognition the previous brand had built.",
+      "+20% retention, securing the new customer base.",
+      "+35% engagement among existing-base customers.",
+      "Churn below 3% throughout the entire migration."
     ]
   },
   blocosTitulo: "HIGHLIGHTS",
@@ -791,7 +794,7 @@ const CASES_EN = {
     {f:"marketing-jornada.webp", c:"Contacts entering the journey: specific segments or consolidated base, with an explicit warning when the rule reaches a large volume."},
     {f:"marketing-performance.webp", c:"Performance reading by channel with an AI-generated summary. Demo interface — the numbers shown are illustrative."}
   ],
-  futuro: "The roadmap continues deepening the journeys — more triggers, more branching, and deeper use of AI in recommending the next action — and consolidating the base's migration to the recurring model, with the usage and plan gauges sustaining the revenue predictability the previous model never delivered."
+  futuro: "The roadmap continues deepening the journeys, with more triggers, more branching, and deeper use of AI in recommending the next action, and consolidating the base's migration to the recurring model, with the usage and plan gauges sustaining the revenue predictability the previous model never delivered."
 }
 };
 
@@ -885,17 +888,18 @@ const CASES_ES = {
     {tag:"ALCANCE", txt:"End-to-end, de la ideación al lanzamiento"}
   ],
   visaoGeral: [
-    "Solvefy Agents es una plataforma multiagente de IA orientada a la producción de contenido y la operación de marketing de las empresas clientes. En lugar de exponer al usuario a una colección de herramientas sueltas, el producto ofrece un único punto de conversación: un agente orquestador que interpreta el pedido y activa al especialista correcto — post de LinkedIn, carrusel de Instagram, artículo, guion de Reels — devolviendo el resultado listo.",
-    "La plataforma es multi-tenant y cuenta con su propio panel de administración, con gestión de tenants, catálogo de agentes y equipos, facturación y control de planes, comunicación in-app, gobernanza de modelos de IA y observabilidad de los servicios.",
-    "El MVP se construyó bajo una restricción poco habitual: la fecha de una feria comercial ya estaba fijada. El plazo era fijo y el alcance, abierto — lo que invirtió la lógica de priorización habitual y convirtió cada decisión de producto en una decisión sobre qué no entraría."
+    "Solvefy Agents es una plataforma multiagente de IA orientada a la producción de contenido y la operación de marketing de las empresas clientes. En lugar de exponer al usuario a una colección de herramientas sueltas, el producto ofrece un único punto de conversación: un agente orquestador que interpreta el pedido, activa al especialista correcto y devuelve el resultado listo.",
+    "El MVP se construyó bajo una restricción: la fecha de una feria comercial ya estaba fijada. El plazo era fijo y el alcance, abierto — cada decisión de producto se convirtió en una decisión sobre qué no entraría."
   ],
   atuacao: {
-    intro: "Como Product Manager, lideré el producto de cero al lanzamiento y sigo siendo responsable de su ciclo de vida, actuando como interfaz entre negocio e ingeniería. La meta era llegar a la feria con algo demostrable y vendible, sin comprometer la base técnica que sostendría la evolución siguiente.",
+    intro: "Como Product Manager, lideré el producto desde cero, actuando como interfaz entre negocio e ingeniería. Como meta, prioricé conducir una entrega demostrable y vendible, sin comprometer la base técnica que sostendría la evolución siguiente.",
     bullets: [
-      "Definición del alcance bajo plazo fijo: recorte del MVP a partir de la fecha de la feria, decidiendo qué entraba y qué quedaba para después.",
+      "Diseño de la arquitectura de agentes para destrabar el uso: un agente orquestador invocaba habilidades — los \"agentes especialistas\" —, definiendo el modelo de configuración por <em>system prompt</em>, proveedor, modelo y temperatura.",
       "Discovery continuo y priorización orientada a datos de uso real, que sostuvieron la reducción del tiempo de respuesta de los agentes de 12,0s a 9,56s y un aumento del 15% en la precisión de las respuestas.",
-      "Diseño de la arquitectura de agentes — orquestador y especialistas — y del modelo de configuración por <em>system prompt</em>, proveedor, modelo y temperatura.",
-      "Estructuración del panel de administración: gobernanza de modelos por tarea, feature flags por entorno y permisos granulares de super-admin.",
+      "Estructuración del panel de administración: estado continuo de latencia, eficiencia, <em>eval</em> y <em>deflection</em>.",
+      "Implementación de feature flags por entorno para lanzamiento por fases y permisos granulares para usuarios.",
+      "Hacer el producto vendible ya en el MVP, con integración de pasarela de pago.",
+      "Precificación con análisis de costos, benchmarks, test A/B y de uso con equipos internos.",
       "Generación de tracción inicial en la feria comercial, validando product-market fit y convirtiendo interés en clientes de pago.",
       "Interfaz estratégica entre negocio e ingeniería para reducir deuda técnica y acelerar las entregas siguientes."
     ]
@@ -915,7 +919,7 @@ const CASES_ES = {
     {f:"agents-conversa.webp", c:"La conversación es el único punto de entrada: el pedido en lenguaje natural activa al especialista y devuelve la pieza lista."},
     {f:"agents-carrossel.webp", c:"Resultado entregado dentro del propio chat — carrusel completo, con copy, hashtags e imágenes generadas."}
   ],
-  futuro: "La evolución del producto sigue orientada por los datos de uso real de los agentes, con foco en ampliar el catálogo de especialistas disponibles, reducir aún más el tiempo de respuesta y madurar la capa de observabilidad — hoy parcialmente instrumentada — para que la priorización deje de depender de la lectura manual y pase a sostenerse en métricas continuas."
+  futuro: "La evolución del producto sigue orientada por los datos de uso real de los agentes, con foco en ampliar el catálogo de especialistas disponibles, sumar más posibilidades de outputs, extender las integraciones propuestas, madurar la capa de observabilidad y evolucionar la automatización de flujos."
 },
 
 "solvefy-marketing": {
@@ -929,18 +933,20 @@ const CASES_ES = {
     {tag:"RETENCIÓN ANUAL", txt:"+20% de retención, blindando la nueva cartera para los próximos 5 años."}
   ],
   visaoGeral: [
-    "Solvefy Marketing es la evolución de Disparo Pro: la misma operación y el mismo equipo, bajo una marca reposicionada. El producto original vendía envíos puntuales — el cliente compraba créditos, enviaba una campaña y desaparecía hasta la próxima necesidad. Un modelo de ingresos irregular, de margen ajustado y sin previsibilidad.",
-    "El giro fue transformar el envío puntual en jornada: flujos automatizados que se activan para contactos por segmento o para toda la base consolidada, orquestando WhatsApp, SMS, RCS, email y voz de forma recurrente, con una capa de IA que lee el rendimiento de las campañas.",
-    "El riesgo central no era técnico. Era migrar una base ya formada, acostumbrada a comprar crédito y enviar, hacia un modelo de suscripción y recurrencia — sin que el cambio de marca y de lógica de cobro se leyera como una pérdida de valor."
+    "Solvefy Marketing es la evolución de Disparo Pro bajo una marca reposicionada. El producto original vendía envíos puntuales en un modelo de negocio prepago, con la cartera de clientes reduciéndose un 60%, el margen cayendo un 20% y sin previsibilidad financiera (MRR)."
   ],
   atuacao: {
-    intro: "Como Product Manager, conduje el turnaround de margen del producto. La transición tenía que ocurrir sin ruptura: cambiar el modelo de negocio, la marca y la propuesta de valor con la base activa usando el producto todo el tiempo.",
+    intro: "Como Product Manager, conduje el turnaround de margen del producto. Mi estrategia fue añadir la capa de construcción de relación dentro del producto, en formato B2B2C, implementando jornadas y claridad de datos de base y de ROI.",
     bullets: [
-      "Conducción del turnaround de margen, migrando el producto de envíos puntuales a jornadas multicanal orquestadas.",
-      "Diseño de las jornadas: reglas de entrada por segmento o base consolidada, versionado y publicación controlada.",
-      "Unificación de los cinco canales, incorporando el email marketing a WhatsApp, SMS, RCS y voz — bajo un flujo único de creación de campaña.",
-      "Gestión de la transición de la base durante el cambio de modelo de cobro, manteniendo el NPS por encima de la meta y el churn bajo control, por debajo del 1,5%.",
-      "Seguimiento del rebranding de Disparo Pro a Solvefy Marketing, preservando el reconocimiento construido por la marca anterior."
+      "Conducción del turnaround de margen, migrando el producto de envíos puntuales a jornadas multicanal orquestadas e inteligencia de datos con IA.",
+      "Diseño de las jornadas con reglas de entrada por segmento o base consolidada, versionado y publicación controlada.",
+      "Unificación de los cinco canales, incorporando el email marketing a WhatsApp, SMS, RCS y voz.",
+      "Estrategia de upsell vinculada a datos proporcionados y generados, para orientar dónde invertir el próximo envío.",
+      "Gestión de la transición de la base durante el cambio de modelo de cobro, manteniendo el NPS por encima de la meta y el churn por debajo del 3%.",
+      "Seguimiento del rebranding de Disparo Pro a Solvefy Marketing, preservando el reconocimiento construido por la marca anterior.",
+      "+20% de retención, blindando la nueva cartera.",
+      "+35% de engagement de clientes de la base.",
+      "Churn menor al 3% durante todo el proceso de migración."
     ]
   },
   blocosTitulo: "DESTACADOS",
@@ -958,7 +964,7 @@ const CASES_ES = {
     {f:"marketing-jornada.webp", c:"Entrada de contactos en la jornada: segmentos específicos o base consolidada, con aviso explícito cuando la regla alcanza un gran volumen."},
     {f:"marketing-performance.webp", c:"Lectura de rendimiento por canal con resumen generado por IA. Interfaz de demostración — los números mostrados son ilustrativos."}
   ],
-  futuro: "El roadmap continúa profundizando las jornadas — más disparadores, más ramificaciones y un uso más profundo de la IA en la recomendación de la próxima acción — y consolidando la migración de la base hacia el modelo recurrente, con la regla de consumo y planes sosteniendo la previsibilidad de ingresos que el modelo anterior no entregaba."
+  futuro: "El roadmap continúa profundizando las jornadas, con más disparadores, más ramificaciones y un uso más profundo de la IA en la recomendación de la próxima acción, y consolidando la migración de la base hacia el modelo recurrente, con la regla de consumo y planes sosteniendo la previsibilidad de ingresos que el modelo anterior no entregaba."
 }
 };
 
@@ -1054,17 +1060,18 @@ const CASES_BY_LANG = {
     {tag:"ESCOPO", txt:"End-to-end da ideação ao lançamento"}
   ],
   visaoGeral: [
-    "O Solvefy Agents é uma plataforma multiagente de IA voltada à produção de conteúdo e à operação de marketing das empresas clientes. Em vez de expor o usuário a uma coleção de ferramentas soltas, o produto oferece um único ponto de conversa: um agente orquestrador que interpreta o pedido e aciona o especialista certo — post de LinkedIn, carrossel de Instagram, artigo, roteiro de Reels — devolvendo o resultado pronto.",
-    "A plataforma é multi-tenant e acompanha um painel de administração próprio, com gestão de tenants, catálogo de agentes e equipes, faturamento e controle de planos, comunicação in-app, governança de modelos de IA e observabilidade dos serviços.",
-    "O MVP foi construído sob uma restrição incomum: a data de uma feira comercial já estava marcada. O prazo era fixo e o escopo, aberto — o que inverteu a lógica de priorização e transformou cada decisão de produto em uma decisão sobre o que não entraria."
+    "O Solvefy Agents é uma plataforma multiagente de IA voltada à produção de conteúdo e à operação de marketing das empresas clientes. Em vez de expor o usuário a uma coleção de ferramentas soltas, o produto oferece um único ponto de conversa: um agente orquestrador que interpreta o pedido, aciona o especialista certo e devolve o resultado pronto.",
+    "O MVP foi construído sob uma restrição: a data de uma feira comercial já estava marcada. O prazo era fixo e o escopo, aberto — cada decisão de produto virou uma decisão sobre o que não entraria."
   ],
   atuacao: {
-    intro: "Como Product Manager, liderei o produto do zero ao lançamento e sigo responsável pelo seu ciclo de vida, atuando como interface entre negócio e engenharia. A meta era chegar à feira com algo demonstrável e vendável, sem comprometer a base técnica que sustentaria a evolução seguinte.",
+    intro: "Como Product Manager, liderei o produto do zero, atuando como interface entre negócio e engenharia. Como meta, priorizei conduzir a entrega com algo demonstrável e vendável, sem comprometer a base técnica que sustentaria a evolução seguinte.",
     bullets: [
-      "Definição de escopo sob prazo fixo: recorte do MVP a partir da data da feira, decidindo o que entrava e o que ficava para depois.",
+      "Desenho da arquitetura de agentes para destravar o uso: um agente orquestrador chamava habilidades — os \"agentes especialistas\" —, definindo o modelo de configuração por <em>system prompt</em>, provider, modelo e temperatura.",
       "Discovery contínuo e priorização orientada a dados de uso real, que sustentaram a redução do tempo de resposta dos agentes de 12,0s para 9,56s e um aumento de 15% na precisão das respostas.",
-      "Desenho da arquitetura de agentes — orquestrador e especialistas — e do modelo de configuração por <em>system prompt</em>, provider, modelo e temperatura.",
-      "Estruturação do painel de administração: governança de modelos por tarefa, feature flags por ambiente e permissões granulares de super-admin.",
+      "Estruturação do painel de administração: status contínuo de latência, eficiência, <em>eval</em> e <em>deflection</em>.",
+      "Implementação de feature flags por ambiente para lançamento faseado e permissões granulares para usuários.",
+      "Tornar o produto vendável já no MVP, com integração de gateway de pagamento.",
+      "Precificação com análise de custos, benchmarks, teste A/B e de uso com times internos.",
       "Geração de tração inicial na feira comercial, validando product-market fit e convertendo interesse em clientes pagantes.",
       "Interface estratégica entre negócio e engenharia para reduzir débito técnico e acelerar as entregas seguintes."
     ]
@@ -1084,7 +1091,7 @@ const CASES_BY_LANG = {
     {f:"agents-conversa.webp", c:"A conversa é o único ponto de entrada: o pedido em linguagem natural aciona o especialista e devolve a peça pronta."},
     {f:"agents-carrossel.webp", c:"Resultado entregue dentro do próprio chat — carrossel completo, com copy, hashtags e imagens geradas."}
   ],
-  futuro: "A evolução do produto segue orientada pelos dados de uso real dos agentes, com foco em ampliar o catálogo de especialistas disponíveis, reduzir ainda mais o tempo de resposta e amadurecer a camada de observabilidade — hoje parcialmente instrumentada — para que a priorização deixe de depender de leitura manual e passe a ser sustentada por métricas contínuas."
+  futuro: "A evolução do produto segue orientada pelos dados de uso real dos agentes, com foco em ampliar o catálogo de especialistas disponíveis, trazer mais possibilidades de outputs, estender as integrações propostas, amadurecer a camada de observabilidade e evoluir a automação de fluxos."
 },
 
 "solvefy-marketing": {
@@ -1098,18 +1105,20 @@ const CASES_BY_LANG = {
     {tag:"RETENÇÃO ANUAL", txt:"+20% de retenção, blindando a nova carteira para os próximos 5 anos."}
   ],
   visaoGeral: [
-    "O Solvefy Marketing é a evolução da Disparo Pro: a mesma operação e o mesmo time, sob uma marca reposicionada. O produto original vendia disparo avulso — o cliente comprava créditos, mandava uma campanha e sumia até a próxima necessidade. Um modelo de receita irregular, de margem apertada e sem previsibilidade.",
-    "A virada foi transformar o disparo em jornada: fluxos automatizados que entram em contatos por segmento ou pela base consolidada, orquestrando WhatsApp, SMS, RCS, e-mail e voz de forma recorrente, com uma camada de IA lendo a performance das campanhas.",
-    "O risco central não era técnico. Era migrar uma base já formada, acostumada a comprar crédito e disparar, para um modelo de assinatura e recorrência — sem que a mudança de marca e de lógica de cobrança fosse lida como perda de valor."
+    "O Solvefy Marketing é a evolução da Disparo Pro sob uma marca reposicionada. O produto original vendia disparo avulso e o modelo de negócio era pré-pago, com a carteira de clientes encolhendo 60%, a margem caindo 20% e sem previsibilidade financeira (MRR)."
   ],
   atuacao: {
-    intro: "Como Product Manager, conduzi o turnaround de margem do produto. A transição precisava acontecer sem ruptura: mudar o modelo de negócio, a marca e a proposta de valor com a base ativa dentro do produto o tempo todo.",
+    intro: "Como Product Manager, conduzi o turnaround de margem do produto. A minha estratégia foi adicionar a camada de construção de relacionamento dentro do produto, no formato B2B2C, implementando jornadas e clareza de dados de base e de ROI.",
     bullets: [
-      "Condução do turnaround de margem, migrando o produto de disparo avulso para jornadas multicanal orquestradas.",
-      "Desenho das jornadas: regras de entrada por segmento ou base consolidada, versionamento e publicação controlada.",
-      "Unificação dos cinco canais, adicionando o E-mail marketing ao WhatsApp, SMS, RCS e voz — sob um fluxo único de criação de campanha.",
-      "Gestão da transição da base durante a mudança de modelo de cobrança, mantendo o NPS acima da meta e o churn abaixo de 1,5% sob controle.",
-      "Acompanhamento do rebranding de Disparo Pro para Solvefy Marketing, preservando o reconhecimento construído pela marca anterior."
+      "Condução do turnaround de margem, migrando o produto de disparo avulso para jornadas multicanal orquestradas e inteligência de dados com IA.",
+      "Desenho das jornadas com regras de entrada por segmento ou base consolidada, versionamento e publicação controlada.",
+      "Unificação dos cinco canais, adicionando o e-mail marketing ao WhatsApp, SMS, RCS e voz.",
+      "Estratégia de upsell vinculada a dados fornecidos e gerados, para orientar onde investir o próximo disparo.",
+      "Gestão da transição da base durante a mudança de modelo de cobrança, mantendo o NPS acima da meta e o churn abaixo de 3%.",
+      "Acompanhamento do rebranding de Disparo Pro para Solvefy Marketing, preservando o reconhecimento construído pela marca anterior.",
+      "+20% de retenção, blindando a nova carteira.",
+      "+35% de engajamento de clientes da base.",
+      "Churn menor que 3% durante todo o processo de migração."
     ]
   },
   blocosTitulo: "DESTAQUES",
@@ -1127,7 +1136,7 @@ const CASES_BY_LANG = {
     {f:"marketing-jornada.webp", c:"Entrada de contatos na jornada: segmentos específicos ou base consolidada, com aviso explícito quando a regra atinge grande volume."},
     {f:"marketing-performance.webp", c:"Leitura de performance por canal com resumo gerado por IA. Interface de demonstração — os números exibidos são ilustrativos."}
   ],
-  futuro: "O roadmap segue no adensamento das jornadas — mais gatilhos, mais ramificações e uso mais profundo da IA na recomendação da próxima ação — e na consolidação da migração da base para o modelo recorrente, com a régua de consumo e planos sustentando a previsibilidade de receita que o modelo anterior não entregava."
+  futuro: "O roadmap segue no adensamento das jornadas, com mais gatilhos, mais ramificações e uso mais profundo da IA na recomendação da próxima ação, e na consolidação da migração da base para o modelo recorrente, com a régua de consumo e planos sustentando a previsibilidade de receita que o modelo anterior não entregava."
 }
 },
 "en": CASES_EN,
