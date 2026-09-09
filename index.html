@@ -718,17 +718,18 @@ const CASES_EN = {
     {tag:"SCOPE", txt:"End-to-end, from ideation to launch"}
   ],
   visaoGeral: [
-    "Solvefy Agents is a multi-agent AI platform built for content production and marketing operations at client companies. Instead of exposing users to a collection of standalone tools, the product offers a single point of conversation: an orchestrator agent that reads the request and calls in the right specialist — a LinkedIn post, an Instagram carousel, an article, a Reels script — and hands back the finished result.",
-    "The platform is multi-tenant and comes with its own admin panel, covering tenant management, an agent and team catalog, billing and plan control, in-app communication, AI model governance, and service observability.",
-    "The MVP was built under an unusual constraint: the trade-show date was already locked in. The deadline was fixed and the scope was open — which flipped the usual prioritization logic and turned every product decision into a decision about what wouldn't make the cut."
+    "Solvefy Agents is a multi-agent AI platform built for content production and marketing operations at client companies. Instead of exposing users to a collection of standalone tools, the product offers a single point of conversation: an orchestrator agent that reads the request, calls in the right specialist, and hands back the finished result.",
+    "The MVP was built under a constraint: the trade-show date was already locked in. The deadline was fixed and the scope was open — every product decision became a decision about what wouldn't make the cut."
   ],
   atuacao: {
-    intro: "As Product Manager, I led the product from zero to launch and remain responsible for its lifecycle, acting as the interface between business and engineering. The goal was to arrive at the trade show with something demonstrable and sellable, without compromising the technical foundation the next stage of the product would need.",
+    intro: "As Product Manager, I led the product from scratch, acting as the interface between business and engineering. My priority was to drive a delivery that was demonstrable and sellable, without compromising the technical foundation the next stage would need.",
     bullets: [
-      "Scoped the MVP under a fixed deadline: cut the feature set back from the trade-show date, deciding what shipped and what waited.",
+      "Designed the agent architecture to unlock usage: an orchestrator agent called on skills — the \"specialist agents\" — with a configuration model defined by <em>system prompt</em>, provider, model, and temperature.",
       "Ran continuous discovery and usage-data-driven prioritization, which underpinned the drop in agent response time from 12.0s to 9.56s and a 15% increase in response accuracy.",
-      "Designed the agent architecture — orchestrator and specialists — and the configuration model by <em>system prompt</em>, provider, model, and temperature.",
-      "Structured the admin panel: per-task model governance, environment feature flags, and granular super-admin permissions.",
+      "Structured the admin panel: continuous status for latency, efficiency, <em>eval</em>, and <em>deflection</em>.",
+      "Implemented environment feature flags for phased rollout and granular user permissions.",
+      "Made the product sellable from the MVP itself, with a payment gateway integration.",
+      "Priced the product with cost analysis, benchmarks, A/B testing, and usage testing with internal teams.",
       "Generated initial traction at the trade show, validating product-market fit and converting interest into paying customers.",
       "Acted as the strategic interface between business and engineering to reduce technical debt and speed up the following deliveries."
     ]
@@ -748,7 +749,7 @@ const CASES_EN = {
     {f:"agents-conversa.webp", c:"The conversation is the only entry point: a natural-language request calls in the specialist and returns a finished asset."},
     {f:"agents-carrossel.webp", c:"Result delivered right inside the chat — a full carousel, with copy, hashtags, and generated images."}
   ],
-  futuro: "The product's evolution keeps following real agent usage data, focused on expanding the catalog of available specialists, further reducing response time, and maturing the observability layer — today only partially instrumented — so prioritization stops relying on manual reading and is instead sustained by continuous metrics."
+  futuro: "The product's evolution keeps following real agent usage data, focused on expanding the catalog of available specialists, adding more output possibilities, extending the proposed integrations, maturing the observability layer, and evolving flow automation."
 },
 
 "solvefy-marketing": {
@@ -885,17 +886,18 @@ const CASES_ES = {
     {tag:"ALCANCE", txt:"End-to-end, de la ideación al lanzamiento"}
   ],
   visaoGeral: [
-    "Solvefy Agents es una plataforma multiagente de IA orientada a la producción de contenido y la operación de marketing de las empresas clientes. En lugar de exponer al usuario a una colección de herramientas sueltas, el producto ofrece un único punto de conversación: un agente orquestador que interpreta el pedido y activa al especialista correcto — post de LinkedIn, carrusel de Instagram, artículo, guion de Reels — devolviendo el resultado listo.",
-    "La plataforma es multi-tenant y cuenta con su propio panel de administración, con gestión de tenants, catálogo de agentes y equipos, facturación y control de planes, comunicación in-app, gobernanza de modelos de IA y observabilidad de los servicios.",
-    "El MVP se construyó bajo una restricción poco habitual: la fecha de una feria comercial ya estaba fijada. El plazo era fijo y el alcance, abierto — lo que invirtió la lógica de priorización habitual y convirtió cada decisión de producto en una decisión sobre qué no entraría."
+    "Solvefy Agents es una plataforma multiagente de IA orientada a la producción de contenido y la operación de marketing de las empresas clientes. En lugar de exponer al usuario a una colección de herramientas sueltas, el producto ofrece un único punto de conversación: un agente orquestador que interpreta el pedido, activa al especialista correcto y devuelve el resultado listo.",
+    "El MVP se construyó bajo una restricción: la fecha de una feria comercial ya estaba fijada. El plazo era fijo y el alcance, abierto — cada decisión de producto se convirtió en una decisión sobre qué no entraría."
   ],
   atuacao: {
-    intro: "Como Product Manager, lideré el producto de cero al lanzamiento y sigo siendo responsable de su ciclo de vida, actuando como interfaz entre negocio e ingeniería. La meta era llegar a la feria con algo demostrable y vendible, sin comprometer la base técnica que sostendría la evolución siguiente.",
+    intro: "Como Product Manager, lideré el producto desde cero, actuando como interfaz entre negocio e ingeniería. Como meta, prioricé conducir una entrega demostrable y vendible, sin comprometer la base técnica que sostendría la evolución siguiente.",
     bullets: [
-      "Definición del alcance bajo plazo fijo: recorte del MVP a partir de la fecha de la feria, decidiendo qué entraba y qué quedaba para después.",
+      "Diseño de la arquitectura de agentes para destrabar el uso: un agente orquestador invocaba habilidades — los \"agentes especialistas\" —, definiendo el modelo de configuración por <em>system prompt</em>, proveedor, modelo y temperatura.",
       "Discovery continuo y priorización orientada a datos de uso real, que sostuvieron la reducción del tiempo de respuesta de los agentes de 12,0s a 9,56s y un aumento del 15% en la precisión de las respuestas.",
-      "Diseño de la arquitectura de agentes — orquestador y especialistas — y del modelo de configuración por <em>system prompt</em>, proveedor, modelo y temperatura.",
-      "Estructuración del panel de administración: gobernanza de modelos por tarea, feature flags por entorno y permisos granulares de super-admin.",
+      "Estructuración del panel de administración: estado continuo de latencia, eficiencia, <em>eval</em> y <em>deflection</em>.",
+      "Implementación de feature flags por entorno para lanzamiento por fases y permisos granulares para usuarios.",
+      "Hacer el producto vendible ya en el MVP, con integración de pasarela de pago.",
+      "Precificación con análisis de costos, benchmarks, test A/B y de uso con equipos internos.",
       "Generación de tracción inicial en la feria comercial, validando product-market fit y convirtiendo interés en clientes de pago.",
       "Interfaz estratégica entre negocio e ingeniería para reducir deuda técnica y acelerar las entregas siguientes."
     ]
@@ -915,7 +917,7 @@ const CASES_ES = {
     {f:"agents-conversa.webp", c:"La conversación es el único punto de entrada: el pedido en lenguaje natural activa al especialista y devuelve la pieza lista."},
     {f:"agents-carrossel.webp", c:"Resultado entregado dentro del propio chat — carrusel completo, con copy, hashtags e imágenes generadas."}
   ],
-  futuro: "La evolución del producto sigue orientada por los datos de uso real de los agentes, con foco en ampliar el catálogo de especialistas disponibles, reducir aún más el tiempo de respuesta y madurar la capa de observabilidad — hoy parcialmente instrumentada — para que la priorización deje de depender de la lectura manual y pase a sostenerse en métricas continuas."
+  futuro: "La evolución del producto sigue orientada por los datos de uso real de los agentes, con foco en ampliar el catálogo de especialistas disponibles, sumar más posibilidades de outputs, extender las integraciones propuestas, madurar la capa de observabilidad y evolucionar la automatización de flujos."
 },
 
 "solvefy-marketing": {
@@ -1054,17 +1056,18 @@ const CASES_BY_LANG = {
     {tag:"ESCOPO", txt:"End-to-end da ideação ao lançamento"}
   ],
   visaoGeral: [
-    "O Solvefy Agents é uma plataforma multiagente de IA voltada à produção de conteúdo e à operação de marketing das empresas clientes. Em vez de expor o usuário a uma coleção de ferramentas soltas, o produto oferece um único ponto de conversa: um agente orquestrador que interpreta o pedido e aciona o especialista certo — post de LinkedIn, carrossel de Instagram, artigo, roteiro de Reels — devolvendo o resultado pronto.",
-    "A plataforma é multi-tenant e acompanha um painel de administração próprio, com gestão de tenants, catálogo de agentes e equipes, faturamento e controle de planos, comunicação in-app, governança de modelos de IA e observabilidade dos serviços.",
-    "O MVP foi construído sob uma restrição incomum: a data de uma feira comercial já estava marcada. O prazo era fixo e o escopo, aberto — o que inverteu a lógica de priorização e transformou cada decisão de produto em uma decisão sobre o que não entraria."
+    "O Solvefy Agents é uma plataforma multiagente de IA voltada à produção de conteúdo e à operação de marketing das empresas clientes. Em vez de expor o usuário a uma coleção de ferramentas soltas, o produto oferece um único ponto de conversa: um agente orquestrador que interpreta o pedido, aciona o especialista certo e devolve o resultado pronto.",
+    "O MVP foi construído sob uma restrição: a data de uma feira comercial já estava marcada. O prazo era fixo e o escopo, aberto — cada decisão de produto virou uma decisão sobre o que não entraria."
   ],
   atuacao: {
-    intro: "Como Product Manager, liderei o produto do zero ao lançamento e sigo responsável pelo seu ciclo de vida, atuando como interface entre negócio e engenharia. A meta era chegar à feira com algo demonstrável e vendável, sem comprometer a base técnica que sustentaria a evolução seguinte.",
+    intro: "Como Product Manager, liderei o produto do zero, atuando como interface entre negócio e engenharia. Como meta, priorizei conduzir a entrega com algo demonstrável e vendável, sem comprometer a base técnica que sustentaria a evolução seguinte.",
     bullets: [
-      "Definição de escopo sob prazo fixo: recorte do MVP a partir da data da feira, decidindo o que entrava e o que ficava para depois.",
+      "Desenho da arquitetura de agentes para destravar o uso: um agente orquestrador chamava habilidades — os \"agentes especialistas\" —, definindo o modelo de configuração por <em>system prompt</em>, provider, modelo e temperatura.",
       "Discovery contínuo e priorização orientada a dados de uso real, que sustentaram a redução do tempo de resposta dos agentes de 12,0s para 9,56s e um aumento de 15% na precisão das respostas.",
-      "Desenho da arquitetura de agentes — orquestrador e especialistas — e do modelo de configuração por <em>system prompt</em>, provider, modelo e temperatura.",
-      "Estruturação do painel de administração: governança de modelos por tarefa, feature flags por ambiente e permissões granulares de super-admin.",
+      "Estruturação do painel de administração: status contínuo de latência, eficiência, <em>eval</em> e <em>deflection</em>.",
+      "Implementação de feature flags por ambiente para lançamento faseado e permissões granulares para usuários.",
+      "Tornar o produto vendável já no MVP, com integração de gateway de pagamento.",
+      "Precificação com análise de custos, benchmarks, teste A/B e de uso com times internos.",
       "Geração de tração inicial na feira comercial, validando product-market fit e convertendo interesse em clientes pagantes.",
       "Interface estratégica entre negócio e engenharia para reduzir débito técnico e acelerar as entregas seguintes."
     ]
@@ -1084,7 +1087,7 @@ const CASES_BY_LANG = {
     {f:"agents-conversa.webp", c:"A conversa é o único ponto de entrada: o pedido em linguagem natural aciona o especialista e devolve a peça pronta."},
     {f:"agents-carrossel.webp", c:"Resultado entregue dentro do próprio chat — carrossel completo, com copy, hashtags e imagens geradas."}
   ],
-  futuro: "A evolução do produto segue orientada pelos dados de uso real dos agentes, com foco em ampliar o catálogo de especialistas disponíveis, reduzir ainda mais o tempo de resposta e amadurecer a camada de observabilidade — hoje parcialmente instrumentada — para que a priorização deixe de depender de leitura manual e passe a ser sustentada por métricas contínuas."
+  futuro: "A evolução do produto segue orientada pelos dados de uso real dos agentes, com foco em ampliar o catálogo de especialistas disponíveis, trazer mais possibilidades de outputs, estender as integrações propostas, amadurecer a camada de observabilidade e evoluir a automação de fluxos."
 },
 
 "solvefy-marketing": {
